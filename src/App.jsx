@@ -165,7 +165,7 @@ const BioContent = () => {
       {/* Profile Photo */}
       <div className="flex justify-center mb-10">
         <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-2 border-gray-100 shadow-lg">
-          <img src={PROFILE_PHOTO} alt="Jiaying He" className="w-full h-full object-cover" />
+          <img src={PROFILE_PHOTO} alt="Jiaying He" className="w-full h-full object-cover object-top" />
         </div>
       </div>
 
