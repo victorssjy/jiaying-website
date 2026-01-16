@@ -543,7 +543,8 @@ export default function App() {
 
       {/* Footer */}
       <div className={`fixed bottom-8 w-full text-center z-10 text-white/20 text-[9px] tracking-[0.4em] uppercase transition-opacity duration-1000 ${activeSection ? 'opacity-0' : 'opacity-100'}`}>
-        © 2025 Jiaying He • Composer
+        <div>© 2025 Jiaying He • Composer</div>
+        <div className="mt-1">Website by Ziheng Sun</div>
       </div>
 
       {/* Modals */}
