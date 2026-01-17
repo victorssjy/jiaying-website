@@ -114,6 +114,13 @@ const SCORES_DATA = [
   { id: 5, title: "Wunderland", year: 2025, instrumentation: "Ensemble & Tape", duration: "ca. 7'55\"", pdfUrl: "/files/Wunderland 15.pdf" },
   { id: 6, title: "When I am with you", year: 2024, instrumentation: "Ensemble", duration: "ca. 12'30\"", pdfUrl: "/files/when i am with you 25.pdf" },
   { id: 7, title: "Purpur", year: 2023, instrumentation: "Mezzo-Soprano & Ensemble", duration: "ca. 9'", pdfUrl: "/files/prupur jiayinghe .pdf" },
+  { id: 8, title: "Cette porte ne s'ouvre pas", year: 2025, instrumentation: "Ensemble Catinblack", duration: "ca. 8'", pdfUrl: "/files/CatinBlack Ensemble 3.pdf" },
+  { id: 9, title: "I am acc...", year: 2025, instrumentation: "Duo", duration: "ca. 7'30\"", pdfUrl: "/files/I am acc... 2.pdf" },
+  { id: 10, title: "Hallo World!", year: 2025, instrumentation: "Ensemble & Tape", duration: "ca. 12'", pdfUrl: "/files/hallo world!  2025 9.pdf" },
+  { id: 11, title: "Peekaboo", year: 2025, instrumentation: "Trio", duration: "ca. 4'", pdfUrl: "/files/peekaboo 2025 3.pdf" },
+  { id: 12, title: "sieh hinüber …", year: 2022, instrumentation: "Ensemble", duration: "ca. 8'25\"", pdfUrl: "/files/sieh hinüber... (2022) 15.pdf" },
+  { id: 13, title: "Silver lining", year: 2023, instrumentation: "Trio", duration: "ca. 8'", pdfUrl: "/files/silver lining 11.pdf" },
+  { id: 14, title: "whisper drops", year: 2022, instrumentation: "Streichquartett", duration: "ca. 9'47\"", pdfUrl: "/files/whisper drops.pdf" },
 ];
 
 // --- HELPER FUNCTION ---
