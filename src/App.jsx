@@ -764,7 +764,7 @@ export default function App() {
           <div className="flex items-center justify-center gap-4 text-white/40">
             <div className="h-px w-8 bg-white/20"></div>
             <p className="tracking-[0.5em] text-[10px] md:text-xs uppercase font-light">
-              Contemporary Music
+              Composer
             </p>
             <div className="h-px w-8 bg-white/20"></div>
           </div>
