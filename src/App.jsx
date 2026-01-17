@@ -60,6 +60,7 @@ const CV_DATA = {
       "Artist Scholarship \"Auf geht's\" 2022 – Ministry of Culture and Science of the State of North Rhine-Westphalia",
       "Artist Scholarship \"Auf geht's\" 2021 – Ministry of Culture and Science of the State of North Rhine-Westphalia",
       // Awards below
+      "Rotary Composition Award 2025",
       "4th International Composer Competition New Music Generation 2022 – Horror Diploma Prize, Chamber Composition 2nd Division (21-27 years old)",
       "European Composer Competition Vienna/Austria – 3rd Category Chamber Music, 2nd Prize (2021)"
     ],
@@ -70,6 +71,7 @@ const CV_DATA = {
       "Künstlerstipendium \"Auf geht's\" 2022 – Ministerium für Kultur und Wissenschaft des Landes Nordrhein-Westfalen",
       "Künstlerstipendium \"Auf geht's\" 2021 – Ministerium für Kultur und Wissenschaft des Landes Nordrhein-Westfalen",
       // Auszeichnungen danach
+      "Rotary Composition Award 2025",
       "4. Internationaler Kompositionswettbewerb New Music Generation 2022 – Horror Diploma Preis, Kammermusik 2. Kategorie (21-27 Jahre)",
       "European Composer Competition Wien/Österreich – 3. Kategorie Kammermusik, 2. Preis (2021)"
     ],
@@ -80,6 +82,7 @@ const CV_DATA = {
       "Bourse d'artiste \"Auf geht's\" 2022 – Ministère de la Culture et des Sciences du Land de Rhénanie-du-Nord-Westphalie",
       "Bourse d'artiste \"Auf geht's\" 2021 – Ministère de la Culture et des Sciences du Land de Rhénanie-du-Nord-Westphalie",
       // Prix ensuite
+      "Rotary Composition Award 2025",
       "4e Concours international de composition New Music Generation 2022 – Prix Horror Diploma, Composition de chambre 2e division (21-27 ans)",
       "European Composer Competition Vienne/Autriche – 3e catégorie Musique de chambre, 2e Prix (2021)"
     ]
@@ -199,6 +202,7 @@ const EVENTS_DATA = {
     { id: 8, date: "2025-Jul-04", time: "18:00", city: "Essen, Germany", venue: "Folkwang uni", title: "I am acc...", ensemble: "Muzi Lyu, Ying Yu", description: "Neue aula Essen" },
     { id: 25, date: "2025-Jul-04", time: "18:00", city: "Essen, Germany", venue: "Folkwang uni", title: "Peekaboo", ensemble: "BenMo Trio, Muzi Lyu, Ying Yu", description: "Neue aula Essen" },
     { id: 26, date: "2025-Jul-04", time: "18:00", city: "Essen, Germany", venue: "Folkwang uni", title: "Hallo World!", ensemble: "Muzi Lyu, Ying Yu", description: "Neue aula Essen" },
+    { id: 24, date: "2025-Jun", city: "Hamburg, Germany", venue: "blurred edges Festival für aktuelle Musik Hamburg 2025", title: "I am addicted", ensemble: "Violin: Anja Gaettens, Piano: Jannifer Hymer", description: "Second performance" },
     { id: 9, date: "2025-Apr", city: "Essen, Germany", venue: "Mini Resident GNMR", title: "Endless labyrinths (Kafka - das Schloss)", ensemble: "Dance, Electronics, Viola", description: "Funded by Gesellschaft für Neue Musik Ruhr e.V. (GNMR)" },
     { 
       id: 10, 
@@ -223,7 +227,6 @@ const EVENTS_DATA = {
     { id: 20, date: "2023-Jan", city: "Essen, Germany", venue: "Dancing Piano", title: "ONISM", ensemble: "Dance & Choreography: Clara Gremont", description: "Funded by DH.NRW Curriculum 4.0.nrw" },
     { id: 21, date: "2022-Nov", city: "Essen, Germany", venue: "1st West meet East Festival", title: "whisper drops", ensemble: "String Quartet", description: "" },
     { id: 23, date: "2021", city: "Essen, Germany", venue: "Folkwang University", title: "Lava", ensemble: "Flute, Clarinet, Cello, Piano", description: "" },
-    { id: 24, date: "2025-Jun", city: "Hamburg, Germany", venue: "blurred edges Festival für aktuelle Musik Hamburg 2025", title: "I am addicted", ensemble: "Violin: Anja Gaettens, Piano: Jannifer Hymer", description: "Second performance" },
   ]
 };
 
