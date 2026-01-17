@@ -108,7 +108,7 @@ const EVENTS_DATA = {
 // --- SCORES DATA ---
 const SCORES_DATA = [
   { id: 1, title: "Troublemaker", year: 2025, instrumentation: "Orchestra", duration: "ca. 8'", pdfUrl: "/files/partitur troublemaker 14.pdf" },
-  { id: 2, title: "ligne de fuite", year: 2025, instrumentation: "", duration: "ca. 6'30\"", pdfUrl: "/files/ligne de fuite.pdf" },
+  { id: 2, title: "ligne de fuite", year: 2025, instrumentation: "Ensemble", duration: "ca. 6'30\"", pdfUrl: "/files/ligne de fuite.pdf" },
   { id: 3, title: "Und doch bewegt es sich", year: 2025, instrumentation: "Orchestra", duration: "ca. 9'", pdfUrl: "/files/Und doch bewegt es sich 17.pdf" },
   { id: 4, title: "vacuum travel: 55 days", year: 2025, instrumentation: "Orchestra", duration: "ca. 8'55\"", pdfUrl: "/files/vacuum travel 14.pdf" },
   { id: 5, title: "Wunderland", year: 2025, instrumentation: "Ensemble & Tape", duration: "ca. 7'55\"", pdfUrl: "/files/Wunderland 15.pdf" },
