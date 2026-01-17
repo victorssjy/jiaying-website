@@ -196,7 +196,9 @@ const EVENTS_DATA = {
       description: "Musikalische Leitung: Stephan Froleyks, Ralf Holtschneider, Peter Nagy. Commissioned by Landesmusikrat NRW",
       url: "https://www.theater-essen.de/programm/a-z/percussion-pur-149545/"
     },
-    { id: 8, date: "2025-June", city: "Hamburg, Germany", venue: "blurred edges Festival für aktuelle Musik", title: "I am acc...", ensemble: "Violin: Anja Gaettens, Piano: Jannifer Hymer", description: "" },
+    { id: 8, date: "2025-Jul-04", time: "18:00", city: "Essen, Germany", venue: "Folkwang uni", title: "I am acc...", ensemble: "Muzi Lyu, Ying Yu", description: "Neue aula Essen" },
+    { id: 25, date: "2025-Jul-04", time: "18:00", city: "Essen, Germany", venue: "Folkwang uni", title: "Peekaboo", ensemble: "BenMo Trio, Muzi Lyu, Ying Yu", description: "Neue aula Essen" },
+    { id: 26, date: "2025-Jul-04", time: "18:00", city: "Essen, Germany", venue: "Folkwang uni", title: "Hallo World!", ensemble: "Muzi Lyu, Ying Yu", description: "Neue aula Essen" },
     { id: 9, date: "2025-Apr", city: "Essen, Germany", venue: "Mini Resident GNMR", title: "Endless labyrinths (Kafka - das Schloss)", ensemble: "Dance, Electronics, Viola", description: "Funded by Gesellschaft für Neue Musik Ruhr e.V. (GNMR)" },
     { 
       id: 10, 
@@ -221,6 +223,7 @@ const EVENTS_DATA = {
     { id: 20, date: "2023-Jan", city: "Essen, Germany", venue: "Dancing Piano", title: "ONISM", ensemble: "Dance & Choreography: Clara Gremont", description: "Funded by DH.NRW Curriculum 4.0.nrw" },
     { id: 21, date: "2022-Nov", city: "Essen, Germany", venue: "1st West meet East Festival", title: "whisper drops", ensemble: "String Quartet", description: "" },
     { id: 23, date: "2021", city: "Essen, Germany", venue: "Folkwang University", title: "Lava", ensemble: "Flute, Clarinet, Cello, Piano", description: "" },
+    { id: 24, date: "2025-Jun", city: "Hamburg, Germany", venue: "blurred edges Festival für aktuelle Musik Hamburg 2025", title: "I am addicted", ensemble: "Violin: Anja Gaettens, Piano: Jannifer Hymer", description: "Second performance" },
   ]
 };
 
