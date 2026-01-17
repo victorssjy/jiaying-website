@@ -165,8 +165,26 @@ const EVENTS_DATA = {
       description: "Accordion: Yilin Han, Conductor: Prof. Oliver Leo Schmidt",
       url: "https://www.bergischesymphoniker.de/konzert/gastspiel-oberhausen-25-jahre-musik-der-zunkunft-631564806/"
     },
-    { id: 4, date: "2025-12-05", city: "Essen, Germany", venue: "Szene 10 Theater", title: "Cette porte ne s'ouvre pas", ensemble: "Ensemble Catinblack", description: "Commissioned by Ensemble Catinblack" },
-    { id: 5, date: "2025-11-08", city: "Essen, Germany", venue: "Now! Festival 2025", title: "Elements Chaos I/II", ensemble: "Interdisciplinary Composition", description: "Video: Doyeon Kim, Director: Roman Pfeifer. Funded by Essen Philharmonic, Folkwang University of Arts" },
+    { 
+      id: 4, 
+      date: "2025-12-05", 
+      city: "Essen, Germany", 
+      venue: "Szene 10 Theater", 
+      title: "Cette porte ne s'ouvre pas", 
+      ensemble: "Ensemble Catinblack", 
+      description: "Commissioned by Ensemble Catinblack",
+      url: "https://www.catinblackensemble.com/agenda"
+    },
+    { 
+      id: 5, 
+      date: "2025-11-08", 
+      city: "Essen, Germany", 
+      venue: "Now! Festival 2025", 
+      title: "Elements Chaos I/II", 
+      ensemble: "Interdisciplinary Composition", 
+      description: "Video: Doyeon Kim, Director: Roman Pfeifer. Funded by Essen Philharmonic, Folkwang University of Arts",
+      url: "https://www.folkwang-uni.de/home/hochschule/veranstaltungen/veranstaltungen-des-laufenden-monats/termin/calendarevent-12787"
+    },
     { 
       id: 6, 
       date: "2025-11-01", 
