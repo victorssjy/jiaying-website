@@ -165,7 +165,6 @@ const EVENTS_DATA = {
       description: "Musikalische Leitung: Stephan Froleyks, Ralf Holtschneider, Peter Nagy. Commissioned by Landesmusikrat NRW",
       url: "https://www.theater-essen.de/programm/a-z/percussion-pur-149545/"
     },
-    { id: 7, date: "2025-07", city: "Essen, Germany", venue: "Bachelor Abschluss Konzert", title: "Just last one beat (ca. 45 min)", ensemble: "Electronic Tape & Ensemble", description: "Fl, Cl, Sax, Perc, E-Guitar, Piano, Keyboard, Vln, Vla, E-Cello" },
     { id: 8, date: "2025-06", city: "Hamburg, Germany", venue: "blurred edges Festival für aktuelle Musik", title: "I am acc...", ensemble: "Violin: Anja Gaettens, Piano: Jannifer Hymer", description: "" },
     { id: 9, date: "2025-04", city: "Essen, Germany", venue: "Mini Resident GNMR", title: "Endless labyrinths (Kafka - das Schloss)", ensemble: "Dance, Electronics, Viola", description: "Funded by Gesellschaft für Neue Musik Ruhr e.V. (GNMR)" },
     { 
@@ -214,7 +213,6 @@ const WORKS_DATA = [
   { id: 14, title: "whisper drops", year: 2022, instrumentation: "Streichquartett", category: "Streichquartett", duration: "ca. 9'47\"", pdfUrl: "/files/whisper drops.pdf" },
   // Works without scores
   { id: 15, title: "Elements Chaos I/II", year: 2025, instrumentation: "Interdisciplinary", category: "Interdisciplinary", duration: null, pdfUrl: null },
-  { id: 16, title: "Just last one beat", year: 2025, instrumentation: "Electronic Tape & Ensemble", category: "Ensemble", duration: "ca. 45'", pdfUrl: null },
   { id: 17, title: "Endless labyrinths (Kafka - das Schloss)", year: 2025, instrumentation: "Dance, Electronics, Viola", category: "Interdisciplinary", duration: null, pdfUrl: null },
   { id: 18, title: "Doppelwendeltreppe/Hofgasse 15", year: 2025, instrumentation: "Performance", category: "Performance", duration: null, pdfUrl: null },
   { id: 19, title: "vacuum travel II", year: 2024, instrumentation: "Ensemble & Video", category: "Ensemble", duration: null, pdfUrl: null },
