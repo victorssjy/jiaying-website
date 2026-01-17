@@ -105,20 +105,61 @@ const CV_DATA = {
 };
 
 // --- CALENDAR DATA ---
+// --- CALENDAR DATA ---
 const EVENTS_DATA = {
   upcoming: [
-    { id: 1, date: "2026-03-27", city: "Stuttgart, Germany", venue: "SWR", title: "troublemaker", ensemble: "SWR Sinfonieorchester", description: "Orchestration: 2222/4231/2perc.1pauken/Harfe/14121086" },
+    { 
+      id: 1, 
+      date: "2026-03-27", 
+      time: "19:30",
+      city: "Stuttgart, Germany", 
+      venue: "Konzertsaal, HMDK Stuttgart", 
+      address: "Urbanstraße 25, 70182 Stuttgart",
+      title: "Troublemaker", 
+      ensemble: "SWR Sinfonieorchester", 
+      description: "Conductor: Jonathan Stockhammer. Orchestration: 2222/4131/2perc.1pauken/Harfe/1210864",
+      url: "https://www.hmdk-stuttgart.de/veranstaltung/kompositionswerkstatt"
+    },
   ],
   archive: [
-    { id: 2, date: "2026-01-14", city: "Köln, Germany", venue: "Musik der Zeit # ATELIER", title: "vacuum travel: 55 days", ensemble: "WDR Sinfonieorchester", description: "Conductor: Baldur Brönnimann" },
+    { 
+      id: 2, 
+      date: "2026-01-14", 
+      city: "Köln, Germany", 
+      venue: "Musik der Zeit # ATELIER", 
+      title: "vacuum travel: 55 days", 
+      ensemble: "WDR Sinfonieorchester", 
+      description: "Conductor: Baldur Brönnimann. Orchestration: 2222/4231/2perc.1pauken/Klavier/108643",
+      url: "https://www1.wdr.de/orchester-und-chor/sinfonieorchester/konzerte/termine/mdz-atelier-100.html"
+    },
     { id: 3, date: "2025-12-18", city: "Oberhausen, Germany", venue: "Oberhausen Orchestra Concert", title: "Und doch bewegt es sich", ensemble: "Bergische Symphoniker", description: "Accordion: Yilin Han, Conductor: Prof. Oliver Leo Schmidt" },
     { id: 4, date: "2025-12-05", city: "Essen, Germany", venue: "Szene 10 Theater", title: "Cette porte ne s'ouvre pas", ensemble: "Ensemble Catinblack", description: "Commissioned by Ensemble Catinblack" },
     { id: 5, date: "2025-11-08", city: "Essen, Germany", venue: "Now! Festival 2025", title: "Elements Chaos I/II", ensemble: "Interdisciplinary Composition", description: "Video: Doyeon Kim, Director: Roman Pfeifer. Funded by Essen Philharmonic, Folkwang University of Arts" },
-    { id: 6, date: "2025-11-01", city: "Essen, Germany", venue: "Now! Festival 2025 / Philharmonie Essen", title: "ligne de fuite", ensemble: "Percussion Ensemble Splash (8-10 percussionists)", description: "Commissioned by Landesmusikrat NRW" },
+    { 
+      id: 6, 
+      date: "2025-11-01", 
+      city: "Essen, Germany", 
+      venue: "Now! Festival 2025 / Philharmonie Essen", 
+      title: "ligne de fuite", 
+      subtitle: "für acht Schlagzeuger*innen (Uraufführung)",
+      ensemble: "SPLASH - PERKUSSION NRW", 
+      description: "Musikalische Leitung: Stephan Froleyks, Ralf Holtschneider, Peter Nagy. Commissioned by Landesmusikrat NRW",
+      url: "https://www.theater-essen.de/programm/a-z/percussion-pur-149545/"
+    },
     { id: 7, date: "2025-07", city: "Essen, Germany", venue: "Bachelor Abschluss Konzert", title: "Just last one beat (ca. 45 min)", ensemble: "Electronic Tape & Ensemble", description: "Fl, Cl, Sax, Perc, E-Guitar, Piano, Keyboard, Vln, Vla, E-Cello" },
     { id: 8, date: "2025-06", city: "Hamburg, Germany", venue: "blurred edges Festival für aktuelle Musik", title: "I am acc...", ensemble: "Violin: Anja Gaettens, Piano: Jannifer Hymer", description: "" },
     { id: 9, date: "2025-04", city: "Essen, Germany", venue: "Mini Resident GNMR", title: "Endless labyrinths (Kafka - das Schloss)", ensemble: "Dance, Electronics, Viola", description: "Funded by Gesellschaft für Neue Musik Ruhr e.V. (GNMR)" },
-    { id: 10, date: "2025-03", city: "Witten, Germany", venue: "Wittener Tage für neue Kammermusik 2025", title: "Wunderland", ensemble: "IEMA Ensemble 2024/25", description: "Conductor: Yannick Mayaud" },
+    { 
+      id: 10, 
+      date: "2025-03-02", 
+      time: "22:00",
+      city: "Witten, Germany", 
+      venue: "Wittener Tage für neue Kammermusik 2025", 
+      title: "Wunderland", 
+      ensemble: "IEMA Ensemble 2024/25", 
+      description: "Conductor: Yannick Mayaud",
+      url: "https://wittenertage.de/veranstaltungen/atelier25"
+    },
     { id: 11, date: "2025-02", city: "Graz, Austria", venue: "Impuls Akademie/Festival 2025", title: "Doppelwendeltreppe/Hofgasse 15", ensemble: "Performance: Jiaying He, Eva Aguilar, Julia Marczuk-Macidlowska", description: "Coached by Carola Bauckholt" },
     { id: 12, date: "2024-10", city: "Barcelona, Spain", venue: "Mixtur Festival", title: "vacuum travel II", ensemble: "Ensemble Sillages", description: "Fl, Cl, Tenor Sax & Video" },
     { id: 13, date: "2024-10-05", city: "Münster, Germany", venue: "KLANGZEIT Festival für Neue Musik", title: "I am addicted", ensemble: "Violin: Anja Gaettens, Piano: Jannifer Hymer", description: "Premiered and commissioned by GNM Münster, funded by Zonta Club Münster" },
@@ -130,7 +171,10 @@ const EVENTS_DATA = {
     { id: 19, date: "2023", city: "Essen, Germany", venue: "Folkwang University", title: "Purpur", ensemble: "Mezzosoprano and Ensemble", description: "" },
     { id: 20, date: "2023-01", city: "Essen, Germany", venue: "Dancing Piano", title: "ONISM", ensemble: "Dance & Choreography: Clara Gremont", description: "Funded by DH.NRW Curriculum 4.0.nrw" },
     { id: 21, date: "2022-11", city: "Essen, Germany", venue: "1st West meet East Festival", title: "whisper drops", ensemble: "String Quartet", description: "" },
+    { id: 22, date: "2022", city: "Essen, Germany", venue: "Folkwang University", title: "Dunkele Hause", ensemble: "Tape and Video", description: "" },
     { id: 23, date: "2021", city: "Essen, Germany", venue: "Folkwang University", title: "Lava", ensemble: "Flute, Clarinet, Cello, Piano", description: "" },
+    { id: 24, date: "2020", city: "Essen, Germany", venue: "Folkwang University", title: "Allein", ensemble: "Tenor and Piano", description: "" },
+    { id: 25, date: "2020", city: "Essen, Germany", venue: "Folkwang University", title: "Virus", ensemble: "Tenor and Ensemble", description: "" },
   ]
 };
 
@@ -337,7 +381,10 @@ const CalendarContent = () => {
             const matchedWork = findMatchingWork(evt.title);
             return (
               <div key={evt.id} className="group flex flex-col md:flex-row md:items-start bg-gray-50 p-6 transition-all hover:bg-black hover:text-white">
-                <div className="md:w-40 mb-2 md:mb-0 flex-shrink-0 text-xl font-light tracking-tighter group-hover:text-white/80">{evt.date}</div>
+                <div className="md:w-40 mb-2 md:mb-0 flex-shrink-0">
+                  <div className="text-xl font-light tracking-tighter group-hover:text-white/80">{evt.date}</div>
+                  {evt.time && <div className="text-sm opacity-60">{evt.time} Uhr</div>}
+                </div>
                 <div className="flex-1">
                   {matchedWork ? (
                     <h4 
@@ -349,9 +396,21 @@ const CalendarContent = () => {
                   ) : (
                     <h4 className="text-xl font-normal mb-1 uppercase tracking-wider">{evt.title}</h4>
                   )}
+                  {evt.subtitle && <p className="text-sm italic opacity-70 mb-1">{evt.subtitle}</p>}
                   <p className="font-light opacity-80">{evt.ensemble}</p>
                   <p className="text-sm mt-1 opacity-60">@ {evt.venue}</p>
+                  {evt.address && <p className="text-xs mt-1 opacity-50">{evt.address}</p>}
                   {evt.description && <p className="text-xs mt-3 italic opacity-50">{evt.description}</p>}
+                  {evt.url && (
+                    <a 
+                      href={evt.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-block mt-3 text-xs uppercase tracking-wider underline opacity-60 hover:opacity-100"
+                    >
+                      More Info →
+                    </a>
+                  )}
                 </div>
                 <div className="md:w-48 text-right flex items-center justify-end gap-2 mt-4 md:mt-0 opacity-50 text-xs uppercase tracking-widest">
                   <MapPin size={12} /> {evt.city}
@@ -369,7 +428,10 @@ const CalendarContent = () => {
             const matchedWork = findMatchingWork(evt.title);
             return (
               <div key={evt.id} className="flex flex-col md:flex-row md:items-center p-4 border-b border-gray-100 text-gray-500 hover:bg-gray-50 transition-colors">
-                <div className="md:w-28 font-mono text-xs flex-shrink-0">{evt.date}</div>
+                <div className="md:w-28 font-mono text-xs flex-shrink-0">
+                  {evt.date}
+                  {evt.time && <span className="ml-1 text-gray-400">{evt.time}</span>}
+                </div>
                 <div className="flex-1 text-sm font-light">
                   {matchedWork ? (
                     <span 
@@ -381,8 +443,19 @@ const CalendarContent = () => {
                   ) : (
                     <span className="font-medium text-gray-800">{evt.title}</span>
                   )}
+                  {evt.subtitle && <span className="text-gray-400 text-xs ml-1">({evt.subtitle})</span>}
                   <span className="text-gray-400"> / {evt.ensemble}</span>
                   {evt.description && <span className="text-gray-300 text-xs block mt-1">{evt.description}</span>}
+                  {evt.url && (
+                    <a 
+                      href={evt.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-xs text-gray-400 hover:text-black underline ml-2"
+                    >
+                      Info
+                    </a>
+                  )}
                 </div>
                 <div className="md:w-40 text-right text-[10px] uppercase tracking-widest mt-2 md:mt-0">{evt.city}</div>
               </div>
