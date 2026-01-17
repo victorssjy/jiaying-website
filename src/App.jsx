@@ -13,12 +13,12 @@ const CONCERT_PHOTOS = [
   { id: 4, url: "/images/P1.jpg", caption: "" },
   { id: 5, url: "/images/P2.jpg", caption: "" },
   { id: 6, url: "/images/P3.jpg", caption: "" },
-  { id: 7, url: "/images/P4.jpg", caption: "" },
-  { id: 8, url: "/images/P5.jpg", caption: "" },
-  { id: 9, url: "/images/P6.jpg", caption: "" },
-  { id: 10, url: "/images/P7.jpg", caption: "" },
-  { id: 11, url: "/images/P8.jpg", caption: "" },
-  { id: 12, url: "/images/P9.jpg", caption: "" },
+  { id: 7, url: "/images/P4.jpg", caption: "now！festival 2025" },
+  { id: 8, url: "/images/P5.jpg", caption: "photo： Ronan Whittern" },
+  { id: 9, url: "/images/P6.jpg", caption: "photo： Ronan Whittern" },
+  { id: 10, url: "/images/P7.jpg", caption: "photo： Ronan Whittern" },
+  { id: 11, url: "/images/P8.jpg", caption: "abschluss Konzert Folkwang university of arts" },
+  { id: 12, url: "/images/P9.jpg", caption: "BenMo Trio" },
   { id: 13, url: "/images/P10.jpg", caption: "" },
 ];
 
@@ -718,6 +718,13 @@ const ContactContent = () => (
         </a>
       ))}
     </div>
+
+    {/* Location */}
+    <div className="pt-8 border-t border-gray-100">
+      <p className="text-xs uppercase tracking-[0.3em] text-gray-400">
+        Based in Essen / Mannheim / Paris
+      </p>
+    </div>
   </div>
 );
 
@@ -738,10 +745,10 @@ export default function App() {
         }}
       />
     
-      {/* Overlay - RAL 3024 荧光红 */}
+      {/* Overlay - Brighter Red */}
       <div 
         className="absolute inset-0 z-0 mix-blend-multiply"
-        style={{ backgroundColor: 'rgba(247, 94, 37, 0.6)' }}
+        style={{ backgroundColor: 'rgba(255, 45, 0, 0.6)' }}
       />
 
       {/* CV Download Button */}
