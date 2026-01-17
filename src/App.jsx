@@ -116,6 +116,19 @@ const SCORES_DATA = [
   { id: 7, title: "Purpur", year: 2023, instrumentation: "Mezzo-Soprano & Ensemble", duration: "ca. 9'", pdfUrl: "/files/prupur jiayinghe .pdf" },
 ];
 
+// --- HELPER FUNCTION ---
+const findMatchingScore = (eventTitle) => {
+  const normalizedEventTitle = eventTitle.toLowerCase().trim();
+  return SCORES_DATA.find(score => {
+    const normalizedScoreTitle = score.title.toLowerCase().trim();
+    return score.pdfUrl && (
+      normalizedEventTitle === normalizedScoreTitle ||
+      normalizedEventTitle.includes(normalizedScoreTitle) ||
+      normalizedScoreTitle.includes(normalizedEventTitle)
+    );
+  });
+};
+
 // --- COMPONENTS ---
 
 const ModalWrapper = ({ title, children, onClose }) => (
@@ -211,49 +224,80 @@ const BioContent = () => {
   );
 };
 
-const CalendarContent = () => (
-  <div className="space-y-12">
-    <div>
-      <h3 className="text-sm font-bold uppercase tracking-[0.3em] text-gray-400 mb-6">Upcoming</h3>
-      <div className="grid gap-4">
-        {EVENTS_DATA.upcoming.map(evt => (
-          <div key={evt.id} className="group flex flex-col md:flex-row md:items-start bg-gray-50 p-6 transition-all hover:bg-black hover:text-white">
-            <div className="md:w-40 mb-2 md:mb-0 flex-shrink-0 text-xl font-light tracking-tighter group-hover:text-white/80">{evt.date}</div>
-            <div className="flex-1">
-              <h4 className="text-xl font-normal mb-1 uppercase tracking-wider">{evt.title}</h4>
-              <p className="font-light opacity-80">{evt.ensemble}</p>
-              <p className="text-sm mt-1 opacity-60">@ {evt.venue}</p>
-              {evt.description && <p className="text-xs mt-3 italic opacity-50">{evt.description}</p>}
-            </div>
-            <div className="md:w-48 text-right flex items-center justify-end gap-2 mt-4 md:mt-0 opacity-50 text-xs uppercase tracking-widest">
-              <MapPin size={12} /> {evt.city}
-            </div>
-          </div>
-        ))}
+const CalendarContent = ({ onViewScore }) => {
+  return (
+    <div className="space-y-12">
+      <div>
+        <h3 className="text-sm font-bold uppercase tracking-[0.3em] text-gray-400 mb-6">Upcoming</h3>
+        <div className="grid gap-4">
+          {EVENTS_DATA.upcoming.map(evt => {
+            const matchedScore = findMatchingScore(evt.title);
+            return (
+              <div key={evt.id} className="group flex flex-col md:flex-row md:items-start bg-gray-50 p-6 transition-all hover:bg-black hover:text-white">
+                <div className="md:w-40 mb-2 md:mb-0 flex-shrink-0 text-xl font-light tracking-tighter group-hover:text-white/80">{evt.date}</div>
+                <div className="flex-1">
+                  {matchedScore ? (
+                    <h4 
+                      onClick={() => onViewScore(matchedScore)}
+                      className="text-xl font-normal mb-1 uppercase tracking-wider cursor-pointer underline decoration-1 underline-offset-4 hover:decoration-2"
+                    >
+                      {evt.title} →
+                    </h4>
+                  ) : (
+                    <h4 className="text-xl font-normal mb-1 uppercase tracking-wider">{evt.title}</h4>
+                  )}
+                  <p className="font-light opacity-80">{evt.ensemble}</p>
+                  <p className="text-sm mt-1 opacity-60">@ {evt.venue}</p>
+                  {evt.description && <p className="text-xs mt-3 italic opacity-50">{evt.description}</p>}
+                </div>
+                <div className="md:w-48 text-right flex items-center justify-end gap-2 mt-4 md:mt-0 opacity-50 text-xs uppercase tracking-widest">
+                  <MapPin size={12} /> {evt.city}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div>
+        <h3 className="text-sm font-bold uppercase tracking-[0.3em] text-gray-400 mb-6">Archive</h3>
+        <div className="grid gap-2">
+          {EVENTS_DATA.archive.map(evt => {
+            const matchedScore = findMatchingScore(evt.title);
+            return (
+              <div key={evt.id} className="flex flex-col md:flex-row md:items-center p-4 border-b border-gray-100 text-gray-500 hover:bg-gray-50 transition-colors">
+                <div className="md:w-28 font-mono text-xs flex-shrink-0">{evt.date}</div>
+                <div className="flex-1 text-sm font-light">
+                  {matchedScore ? (
+                    <span 
+                      onClick={() => onViewScore(matchedScore)}
+                      className="font-medium text-gray-800 cursor-pointer underline decoration-1 underline-offset-2 hover:decoration-2 hover:text-black"
+                    >
+                      {evt.title} →
+                    </span>
+                  ) : (
+                    <span className="font-medium text-gray-800">{evt.title}</span>
+                  )}
+                  <span className="text-gray-400"> / {evt.ensemble}</span>
+                  {evt.description && <span className="text-gray-300 text-xs block mt-1">{evt.description}</span>}
+                </div>
+                <div className="md:w-40 text-right text-[10px] uppercase tracking-widest mt-2 md:mt-0">{evt.city}</div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
+  );
+};
 
-    <div>
-      <h3 className="text-sm font-bold uppercase tracking-[0.3em] text-gray-400 mb-6">Archive</h3>
-      <div className="grid gap-2">
-        {EVENTS_DATA.archive.map(evt => (
-          <div key={evt.id} className="flex flex-col md:flex-row md:items-center p-4 border-b border-gray-100 text-gray-500 hover:bg-gray-50 transition-colors">
-            <div className="md:w-28 font-mono text-xs flex-shrink-0">{evt.date}</div>
-            <div className="flex-1 text-sm font-light">
-              <span className="font-medium text-gray-800">{evt.title}</span>
-              <span className="text-gray-400"> / {evt.ensemble}</span>
-              {evt.description && <span className="text-gray-300 text-xs block mt-1">{evt.description}</span>}
-            </div>
-            <div className="md:w-40 text-right text-[10px] uppercase tracking-widest mt-2 md:mt-0">{evt.city}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-);
-
-const ScoresContent = () => {
-  const [selectedScore, setSelectedScore] = useState(null);
+const ScoresContent = ({ initialScoreId }) => {
+  const [selectedScore, setSelectedScore] = useState(() => {
+    if (initialScoreId) {
+      return SCORES_DATA.find(s => s.id === initialScoreId) || null;
+    }
+    return null;
+  });
   const years = [...new Set(SCORES_DATA.map(s => s.year))].sort((a, b) => b - a);
   const [filterYear, setFilterYear] = useState('all');
 
@@ -288,7 +332,7 @@ const ScoresContent = () => {
 
       <div className="grid gap-3">
         {filteredScores.map(score => (
-          <div key={score.id} className="group flex flex-col md:flex-row md:items-center p-4 border border-gray-100 hover:border-black transition-colors">
+          <div key={score.id} data-score-id={score.id} className="group flex flex-col md:flex-row md:items-center p-4 border border-gray-100 hover:border-black transition-colors">
             <div className="flex-1">
               <h4 className="font-medium text-gray-900">{score.title}</h4>
               <p className="text-sm text-gray-500">{score.instrumentation}</p>
@@ -459,6 +503,12 @@ const ContactContent = () => (
 // --- MAIN APP ---
 export default function App() {
   const [activeSection, setActiveSection] = useState(null);
+  const [selectedScoreId, setSelectedScoreId] = useState(null);
+
+  const handleViewScoreFromCalendar = (score) => {
+    setSelectedScoreId(score.id);
+    setActiveSection('scores');
+  };
   
   return (
     <div className="relative w-full min-h-screen font-sans text-gray-900 overflow-hidden bg-black select-none">
@@ -514,7 +564,10 @@ export default function App() {
           ].map(nav => (
             <button 
               key={nav.id}
-              onClick={() => setActiveSection(nav.id)}
+              onClick={() => {
+                setSelectedScoreId(null);
+                setActiveSection(nav.id);
+              }}
               className="group relative px-4 py-2 text-sm tracking-[0.4em] uppercase font-light text-white/70 hover:text-white transition-colors"
             >
               {nav.label}
@@ -539,12 +592,12 @@ export default function App() {
       )}
       {activeSection === 'calendar' && (
         <ModalWrapper title="Calendar" onClose={() => setActiveSection(null)}>
-          <CalendarContent />
+          <CalendarContent onViewScore={handleViewScoreFromCalendar} />
         </ModalWrapper>
       )}
       {activeSection === 'scores' && (
-        <ModalWrapper title="Scores" onClose={() => setActiveSection(null)}>
-          <ScoresContent />
+        <ModalWrapper title="Scores" onClose={() => { setActiveSection(null); setSelectedScoreId(null); }}>
+          <ScoresContent initialScoreId={selectedScoreId} />
         </ModalWrapper>
       )}
       {activeSection === 'photos' && (
