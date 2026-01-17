@@ -748,7 +748,7 @@ export default function App() {
       {/* Overlay - Brighter Red */}
       <div 
         className="absolute inset-0 z-0 mix-blend-multiply"
-        style={{ backgroundColor: 'rgba(255, 45, 0, 0.6)' }}
+        style={{ backgroundColor: 'rgba(255, 49, 49, 0.6)' }}
       />
 
       {/* CV Download Button */}
