@@ -759,6 +759,7 @@ const WorksContent = () => {
     <div className="space-y-8">
       <div className="text-center mb-8">
         <p className="text-sm text-gray-500 italic">Scores are available for viewing only. Downloads are disabled to protect copyright.</p>
+        <p className="text-sm text-gray-500 italic">For full score PDFs, please contact directly.</p>
       </div>
 
       {/* Filters */}
