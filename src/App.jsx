@@ -661,6 +661,19 @@ const CalendarContent = () => {
     setViewingWork(null);
   };
 
+  // Group archive events by year
+  const archiveByYear = EVENTS_DATA.archive.reduce((acc, evt) => {
+    const year = evt.date.substring(0, 4);
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(evt);
+    return acc;
+  }, {});
+
+  // Sort years descending
+  const sortedYears = Object.keys(archiveByYear).sort((a, b) => b - a);
+
   return (
     <div className="space-y-12">
       <div>
@@ -712,48 +725,60 @@ const CalendarContent = () => {
 
       <div>
         <h3 className="text-sm font-bold uppercase tracking-[0.3em] text-gray-400 mb-6">Archive</h3>
-        <div className="grid gap-2">
-          {EVENTS_DATA.archive.map(evt => {
-            const matchedWork = findMatchingWork(evt.title);
-            return (
-              <div key={evt.id} className="flex flex-col md:flex-row md:items-center p-4 border-b border-gray-100 text-gray-500 hover:bg-gray-50 transition-colors">
-                <div className="md:w-28 font-mono text-xs flex-shrink-0">
-                  {evt.date}
-                  {evt.time && <span className="ml-1 text-gray-400">{evt.time}</span>}
-                </div>
-                <div className="flex-1 text-sm font-light">
-                  {matchedWork ? (
-                    <span 
-                      onClick={() => handleViewScore(matchedWork)}
-                      className="font-medium text-gray-800 cursor-pointer underline decoration-1 underline-offset-2 hover:decoration-2 hover:text-black"
-                    >
-                      {evt.title} →
-                    </span>
-                  ) : (
-                    <span className="font-medium text-gray-800">{evt.title}</span>
-                  )}
-                  {evt.subtitle && <span className="text-gray-400 text-xs ml-1">({evt.subtitle})</span>}
-                  <span className="text-gray-400"> / {evt.ensemble}</span>
-                  {evt.description && <span className="text-gray-300 text-xs block mt-1">{evt.description}</span>}
-                  {evt.url && (
-                    <a 
-                      href={evt.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-xs text-gray-400 hover:text-black underline ml-2"
-                    >
-                      Info
-                    </a>
-                  )}
-                </div>
-                <div className="md:w-40 text-right text-[10px] uppercase tracking-widest mt-2 md:mt-0">{evt.city}</div>
-              </div>
-            );
-          })}
-        </div>
+        
+        {sortedYears.map(year => (
+          <div key={year} className="mb-8">
+            {/* Year Header */}
+            <div className="flex items-center gap-4 mb-4">
+              <h4 className="text-2xl font-extralight text-gray-300">{year}</h4>
+              <div className="flex-1 h-px bg-gray-100"></div>
+            </div>
+            
+            {/* Events for this year */}
+            <div className="grid gap-2">
+              {archiveByYear[year].map(evt => {
+                const matchedWork = findMatchingWork(evt.title);
+                return (
+                  <div key={evt.id} className="flex flex-col md:flex-row md:items-center p-4 border-b border-gray-100 text-gray-500 hover:bg-gray-50 transition-colors">
+                    <div className="md:w-28 font-mono text-xs flex-shrink-0">
+                      {evt.date.substring(5)}
+                      {evt.time && <span className="ml-1 text-gray-400">{evt.time}</span>}
+                    </div>
+                    <div className="flex-1 text-sm font-light">
+                      {matchedWork ? (
+                        <span 
+                          onClick={() => handleViewScore(matchedWork)}
+                          className="font-medium text-gray-800 cursor-pointer underline decoration-1 underline-offset-2 hover:decoration-2 hover:text-black"
+                        >
+                          {evt.title} →
+                        </span>
+                      ) : (
+                        <span className="font-medium text-gray-800">{evt.title}</span>
+                      )}
+                      {evt.subtitle && <span className="text-gray-400 text-xs ml-1">({evt.subtitle})</span>}
+                      <span className="text-gray-400"> / {evt.ensemble}</span>
+                      {evt.description && <span className="text-gray-300 text-xs block mt-1">{evt.description}</span>}
+                      {evt.url && (
+                        <a 
+                          href={evt.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-xs text-gray-400 hover:text-black underline ml-2"
+                        >
+                          Info
+                        </a>
+                      )}
+                    </div>
+                    <div className="md:w-40 text-right text-[10px] uppercase tracking-widest mt-2 md:mt-0">{evt.city}</div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </div>
 
-      {/* Score Viewer within Calendar - closes back to Calendar */}
+      {/* Score Viewer within Calendar */}
       {viewingWork && (
         <ScoreViewer work={viewingWork} onClose={handleCloseScore} />
       )}
