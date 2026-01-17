@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Music, User, MapPin, Facebook, Download, ChevronLeft, ChevronRight, X, ZoomIn, ZoomOut, RotateCw } from 'lucide-react';
 import * as pdfjsLib from 'pdfjs-dist';
 import pdfjsWorker from 'pdfjs-dist/build/pdf.worker.mjs?url';
+import { Analytics } from '@vercel/analytics/react';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
@@ -1153,6 +1154,9 @@ export default function App() {
           background: #000;
         }
       `}} />
+
+      {/* Vercel Web Analytics */}
+      <Analytics />
 
     </div>
   );
