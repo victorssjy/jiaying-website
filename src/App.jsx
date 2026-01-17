@@ -737,15 +737,15 @@ export default function App() {
       
       {/* Background Image */}
       <div 
-        className="absolute inset-0 z-0 opacity-50"
+        className="absolute inset-0 z-0 opacity-50 grayscale"
         style={{
           backgroundImage: `url(${BACKGROUND_IMAGE})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
       />
-    
-      {/* Overlay - Brighter Red */}
+      
+      {/* Overlay */}
       <div className="absolute inset-0 z-0 bg-black/40 mix-blend-multiply" />
 
       {/* CV Download Button */}
