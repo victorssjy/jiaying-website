@@ -194,36 +194,35 @@ const EVENTS_DATA = {
 };
 
 // --- WORKS DATA ---
-// instrumentation: display text shown on the work
-// category: used for filtering (groups ensemble variants under "Ensemble")
 const WORKS_DATA = [
-  { id: 1, title: "Troublemaker", year: 2025, instrumentation: "Orchestra", category: "Orchestra", duration: "ca. 8'", pdfUrl: "/files/partitur troublemaker 14.pdf" },
-  { id: 2, title: "ligne de fuite", year: 2025, instrumentation: "Ensemble", category: "Ensemble", duration: "ca. 6'30\"", pdfUrl: "/files/ligne de fuite.pdf" },
-  { id: 3, title: "Und doch bewegt es sich", year: 2025, instrumentation: "Orchestra", category: "Orchestra", duration: "ca. 9'", pdfUrl: "/files/Und doch bewegt es sich 17.pdf" },
-  { id: 4, title: "vacuum travel: 55 days", year: 2025, instrumentation: "Orchestra", category: "Orchestra", duration: "ca. 8'55\"", pdfUrl: "/files/vacuum travel 14.pdf" },
-  { id: 5, title: "Wunderland", year: 2025, instrumentation: "Ensemble & Tape", category: "Ensemble", duration: "ca. 7'55\"", pdfUrl: "/files/Wunderland 15.pdf" },
-  { id: 6, title: "When I am with you", year: 2024, instrumentation: "große Ensemble", category: "Ensemble", duration: "ca. 12'30\"", pdfUrl: "/files/when i am with you 25.pdf" },
-  { id: 7, title: "Purpur", year: 2023, instrumentation: "Mezzo-Soprano & Ensemble", category: "Ensemble", duration: "ca. 9'", pdfUrl: "/files/prupur jiayinghe .pdf" },
-  { id: 8, title: "Cette porte ne s'ouvre pas", year: 2025, instrumentation: "Trio", category: "Trio", duration: "ca. 8'", pdfUrl: "/files/CatinBlack Ensemble 3.pdf" },
-  { id: 9, title: "I am acc...", year: 2025, instrumentation: "Duo", category: "Duo", duration: "ca. 7'30\"", pdfUrl: "/files/I am acc... 2.pdf" },
-  { id: 10, title: "Hallo World!", year: 2025, instrumentation: "Ensemble & Tape", category: "Ensemble", duration: "ca. 11'30\"", pdfUrl: "/files/hallo world!  2025 9.pdf" },
-  { id: 11, title: "Peekaboo", year: 2025, instrumentation: "Trio", category: "Trio", duration: "ca. 4'", pdfUrl: "/files/peekaboo 2025 3.pdf" },
-  { id: 12, title: "sieh hinüber …", year: 2022, instrumentation: "Ensemble", category: "Ensemble", duration: "ca. 8'25\"", pdfUrl: "/files/sieh hinüber... (2022) 15.pdf" },
-  { id: 13, title: "Silver lining", year: 2023, instrumentation: "Trio", category: "Trio", duration: "ca. 8'", pdfUrl: "/files/silver lining 11.pdf" },
-  { id: 14, title: "whisper drops", year: 2022, instrumentation: "Streichquartett", category: "Streichquartett", duration: "ca. 9'47\"", pdfUrl: "/files/whisper drops.pdf" },
+  { id: 1, title: "Troublemaker", year: 2025, instrumentation: "Orchestra", category: "Orchestra", duration: "ca. 8'", pdfUrl: "/files/partitur troublemaker 14.pdf", audioUrl: null },
+  { id: 2, title: "ligne de fuite", year: 2025, instrumentation: "Ensemble", category: "Ensemble", duration: "ca. 6'30\"", pdfUrl: "/files/ligne de fuite.pdf", audioUrl: null },
+  { id: 3, title: "Und doch bewegt es sich", year: 2025, instrumentation: "Orchestra", category: "Orchestra", duration: "ca. 9'", pdfUrl: "/files/Und doch bewegt es sich 17.pdf", audioUrl: null },
+  { id: 4, title: "vacuum travel: 55 days", year: 2025, instrumentation: "Orchestra", category: "Orchestra", duration: "ca. 8'55\"", pdfUrl: "/files/vacuum travel 14.pdf", audioUrl: null },
+  { id: 5, title: "Wunderland", year: 2025, instrumentation: "Ensemble & Tape", category: "Ensemble", duration: "ca. 7'55\"", pdfUrl: "/files/Wunderland 15.pdf", audioUrl: "https://soundcloud.com/8ghtlom8bgsd/wunderland-2025" },
+  { id: 6, title: "When I am with you", year: 2024, instrumentation: "große Ensemble", category: "Ensemble", duration: "ca. 12'30\"", pdfUrl: "/files/when i am with you 25.pdf", audioUrl: "https://soundcloud.com/8ghtlom8bgsd/whan-i-am-with-you" },
+  { id: 7, title: "Purpur", year: 2023, instrumentation: "Mezzo-Soprano & Ensemble", category: "Ensemble", duration: "ca. 9'", pdfUrl: "/files/prupur jiayinghe .pdf", audioUrl: "https://soundcloud.com/8ghtlom8bgsd/purpur-2023-ua-drei-lieder-fur-mezzosopran-und-ensemble" },
+  { id: 8, title: "Cette porte ne s'ouvre pas", year: 2025, instrumentation: "Trio", category: "Trio", duration: "ca. 8'", pdfUrl: "/files/CatinBlack Ensemble 3.pdf", audioUrl: null },
+  { id: 9, title: "I am acc...", year: 2025, instrumentation: "Duo", category: "Duo", duration: "ca. 7'30\"", pdfUrl: "/files/I am acc... 2.pdf", audioUrl: "https://soundcloud.com/8ghtlom8bgsd/i-am-acc-2025" },
+  { id: 10, title: "Hallo World!", year: 2025, instrumentation: "Ensemble & Tape", category: "Ensemble", duration: "ca. 11'30\"", pdfUrl: "/files/hallo world!  2025 9.pdf", audioUrl: "https://soundcloud.com/8ghtlom8bgsd/hallo-world" },
+  { id: 11, title: "Peekaboo", year: 2025, instrumentation: "Trio", category: "Trio", duration: "ca. 4'", pdfUrl: "/files/peekaboo 2025 3.pdf", audioUrl: "https://soundcloud.com/8ghtlom8bgsd/peekaboo-2025" },
+  { id: 12, title: "sieh hinüber …", year: 2022, instrumentation: "Ensemble", category: "Ensemble", duration: "ca. 8'25\"", pdfUrl: "/files/sieh hinüber... (2022) 15.pdf", audioUrl: null },
+  { id: 13, title: "Silver lining", year: 2023, instrumentation: "Trio", category: "Trio", duration: "ca. 8'", pdfUrl: "/files/silver lining 11.pdf", audioUrl: "https://soundcloud.com/8ghtlom8bgsd/silver-lining" },
+  { id: 14, title: "whisper drops", year: 2022, instrumentation: "Streichquartett", category: "Streichquartett", duration: "ca. 9'47\"", pdfUrl: "/files/whisper drops.pdf", audioUrl: "https://soundcloud.com/8ghtlom8bgsd/whisper-drops-2022" },
   // Works without scores
-  { id: 15, title: "Elements Chaos I/II", year: 2025, instrumentation: "Interdisciplinary", category: "Interdisciplinary", duration: null, pdfUrl: null },
-  { id: 17, title: "Endless labyrinths (Kafka - das Schloss)", year: 2025, instrumentation: "Dance, Electronics, Viola", category: "Interdisciplinary", duration: "ca. 30'", pdfUrl: null },
-  { id: 18, title: "Doppelwendeltreppe/Hofgasse 15", year: 2025, instrumentation: "Performance", category: "Performance", duration: null, pdfUrl: null },
-  { id: 19, title: "vacuum travel II", year: 2024, instrumentation: "Ensemble & Video", category: "Ensemble", duration: null, pdfUrl: null },
-  { id: 20, title: "I am addicted", year: 2024, instrumentation: "Duo", category: "Duo", duration: null, pdfUrl: null },
-  { id: 21, title: "I can't live without", year: 2024, instrumentation: "Ensemble", category: "Ensemble", duration: null, pdfUrl: null },
-  { id: 22, title: "if only", year: 2023, instrumentation: "große Ensemble", category: "Ensemble", duration: null, pdfUrl: null },
-  { id: 23, title: "ONISM", year: 2023, instrumentation: "Dance & Piano", category: "Interdisciplinary", duration: null, pdfUrl: null },
-  { id: 24, title: "Dunkele Hause", year: 2022, instrumentation: "Tape & Video", category: "Electronics", duration: null, pdfUrl: null },
-  { id: 25, title: "Lava", year: 2021, instrumentation: "Quartet", category: "Quartet", duration: null, pdfUrl: null },
-  { id: 26, title: "Allein", year: 2020, instrumentation: "Tenor & Piano", category: "Duo", duration: null, pdfUrl: null },
-  { id: 27, title: "Virus", year: 2020, instrumentation: "Tenor & Ensemble", category: "Ensemble", duration: null, pdfUrl: null },
+  { id: 15, title: "Elements Chaos I/II", year: 2025, instrumentation: "Interdisciplinary", category: "Interdisciplinary", duration: null, pdfUrl: null, audioUrl: null },
+  { id: 16, title: "Just last one beat", year: 2025, instrumentation: "Electronic Tape & Ensemble", category: "Ensemble", duration: "ca. 45'", pdfUrl: null, audioUrl: null },
+  { id: 17, title: "Endless labyrinths (Kafka - das Schloss)", year: 2025, instrumentation: "Dance, Electronics, Viola", category: "Interdisciplinary", duration: null, pdfUrl: null, audioUrl: null },
+  { id: 18, title: "Doppelwendeltreppe/Hofgasse 15", year: 2025, instrumentation: "Performance", category: "Performance", duration: null, pdfUrl: null, audioUrl: null },
+  { id: 19, title: "vacuum travel II", year: 2024, instrumentation: "Ensemble & Video", category: "Ensemble", duration: null, pdfUrl: null, audioUrl: null },
+  { id: 20, title: "I am addicted", year: 2024, instrumentation: "Duo", category: "Duo", duration: null, pdfUrl: null, audioUrl: "https://soundcloud.com/8ghtlom8bgsd/i-am-addicted" },
+  { id: 21, title: "I can't live without", year: 2024, instrumentation: "Ensemble", category: "Ensemble", duration: null, pdfUrl: null, audioUrl: null },
+  { id: 22, title: "if only", year: 2023, instrumentation: "große Ensemble", category: "Ensemble", duration: null, pdfUrl: null, audioUrl: null },
+  { id: 23, title: "ONISM", year: 2023, instrumentation: "Dance & Piano", category: "Interdisciplinary", duration: null, pdfUrl: null, audioUrl: null },
+  { id: 24, title: "Dunkele Hause", year: 2022, instrumentation: "Tape & Video", category: "Electronics", duration: null, pdfUrl: null, audioUrl: null },
+  { id: 25, title: "Lava", year: 2021, instrumentation: "Quartet", category: "Quartet", duration: null, pdfUrl: null, audioUrl: "https://soundcloud.com/8ghtlom8bgsd/jiaying-he-lava" },
+  { id: 26, title: "Allein", year: 2020, instrumentation: "Tenor & Piano", category: "Duo", duration: null, pdfUrl: null, audioUrl: null },
+  { id: 27, title: "Virus", year: 2020, instrumentation: "Tenor & Ensemble", category: "Ensemble", duration: null, pdfUrl: null, audioUrl: null },
 ];
 
 // --- HELPER FUNCTION ---
@@ -566,9 +565,19 @@ const WorksContent = () => {
               <h4 className="font-medium text-gray-900">{work.title}</h4>
               <p className="text-sm text-gray-500">{work.instrumentation}</p>
             </div>
-            <div className="flex items-center gap-4 mt-3 md:mt-0">
+            <div className="flex items-center gap-3 mt-3 md:mt-0 flex-wrap">
               {work.duration && <span className="text-xs text-gray-400">{work.duration}</span>}
               <span className="text-xs text-gray-300">{work.year}</span>
+              {work.audioUrl && (
+                <a 
+                  href={work.audioUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 text-xs uppercase tracking-wider border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition-colors"
+                >
+                  Listen
+                </a>
+              )}
               {work.pdfUrl ? (
                 <button 
                   onClick={() => setSelectedWork(work)}
