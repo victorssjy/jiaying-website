@@ -250,6 +250,16 @@ const BioContent = () => {
         </div>
       )}
 
+      {activeTab === 'festivals' && (
+        <ul className="space-y-4">
+          {CV_DATA.festivals[lang].map((item, idx) => (
+            <li key={idx} className="text-gray-700 font-light leading-relaxed pl-4 border-l-2 border-gray-100 hover:border-black transition-colors">
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
+
       {activeTab === 'awards' && (
         <ul className="space-y-6">
           {CV_DATA.awards[lang].map((award, idx) => (
