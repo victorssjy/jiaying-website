@@ -157,7 +157,7 @@ const EVENTS_DATA = {
     },
     { 
       id: 3, 
-      date: "2025-12-18", 
+      date: "2025-Dec-18", 
       city: "Oberhausen, Germany", 
       venue: "Oberhausen Orchestra Concert", 
       title: "Und doch bewegt es sich", 
@@ -167,7 +167,7 @@ const EVENTS_DATA = {
     },
     { 
       id: 4, 
-      date: "2025-12-05", 
+      date: "2025-Dec-05", 
       city: "Essen, Germany", 
       venue: "Szene 10 Theater", 
       title: "Cette porte ne s'ouvre pas", 
@@ -177,7 +177,7 @@ const EVENTS_DATA = {
     },
     { 
       id: 5, 
-      date: "2025-11-08", 
+      date: "2025-Nov-08", 
       city: "Essen, Germany", 
       venue: "Now! Festival 2025", 
       title: "Elements Chaos I/II", 
@@ -187,7 +187,7 @@ const EVENTS_DATA = {
     },
     { 
       id: 6, 
-      date: "2025-11-01", 
+      date: "2025-Nov-01", 
       city: "Essen, Germany", 
       venue: "Now! Festival 2025 / Philharmonie Essen", 
       title: "ligne de fuite", 
@@ -196,11 +196,11 @@ const EVENTS_DATA = {
       description: "Musikalische Leitung: Stephan Froleyks, Ralf Holtschneider, Peter Nagy. Commissioned by Landesmusikrat NRW",
       url: "https://www.theater-essen.de/programm/a-z/percussion-pur-149545/"
     },
-    { id: 8, date: "2025-06", city: "Hamburg, Germany", venue: "blurred edges Festival für aktuelle Musik", title: "I am acc...", ensemble: "Violin: Anja Gaettens, Piano: Jannifer Hymer", description: "" },
-    { id: 9, date: "2025-04", city: "Essen, Germany", venue: "Mini Resident GNMR", title: "Endless labyrinths (Kafka - das Schloss)", ensemble: "Dance, Electronics, Viola", description: "Funded by Gesellschaft für Neue Musik Ruhr e.V. (GNMR)" },
+    { id: 8, date: "2025-June", city: "Hamburg, Germany", venue: "blurred edges Festival für aktuelle Musik", title: "I am acc...", ensemble: "Violin: Anja Gaettens, Piano: Jannifer Hymer", description: "" },
+    { id: 9, date: "2025-Apr", city: "Essen, Germany", venue: "Mini Resident GNMR", title: "Endless labyrinths (Kafka - das Schloss)", ensemble: "Dance, Electronics, Viola", description: "Funded by Gesellschaft für Neue Musik Ruhr e.V. (GNMR)" },
     { 
       id: 10, 
-      date: "2025-03-02", 
+      date: "2025-Mar-02", 
       time: "22:00",
       city: "Witten, Germany", 
       venue: "Wittener Tage für neue Kammermusik 2025", 
@@ -209,17 +209,17 @@ const EVENTS_DATA = {
       description: "Conductor: Yannick Mayaud",
       url: "https://wittenertage.de/veranstaltungen/atelier25"
     },
-    { id: 11, date: "2025-02", city: "Graz, Austria", venue: "Impuls Akademie/Festival 2025", title: "Doppelwendeltreppe/Hofgasse 15", ensemble: "Performance: Jiaying He, Eva Aguilar, Julia Marczuk-Macidlowska", description: "Coached by Carola Bauckholt" },
-    { id: 12, date: "2024-10", city: "Barcelona, Spain", venue: "Mixtur Festival", title: "vacuum travel II", ensemble: "Ensemble Sillages", description: "Fl, Cl, Tenor Sax & Video" },
-    { id: 13, date: "2024-10-05", city: "Münster, Germany", venue: "KLANGZEIT Festival für Neue Musik", title: "I am addicted", ensemble: "Violin: Anja Gaettens, Piano: Jannifer Hymer", description: "Premiered and commissioned by GNM Münster, funded by Zonta Club Münster" },
-    { id: 14, date: "2024-09", city: "Düsseldorf, Germany", venue: "Düsseldorf Festival! 2024", title: "11000 Saiten (G.F. Haas)", ensemble: "Ensemble Klangforum Wien", description: "As pianist" },
-    { id: 15, date: "2024-08-26", city: "Trento, Italy", venue: "MotoContrario Festival", title: "I can't live without", ensemble: "Ensemble MotoContrario", description: "" },
+    { id: 11, date: "2025-Feb", city: "Graz, Austria", venue: "Impuls Akademie/Festival 2025", title: "Doppelwendeltreppe/Hofgasse 15", ensemble: "Performance: Jiaying He, Eva Aguilar, Julia Marczuk-Macidlowska", description: "Coached by Carola Bauckholt" },
+    { id: 12, date: "2024-Oct", city: "Barcelona, Spain", venue: "Mixtur Festival", title: "vacuum travel II", ensemble: "Ensemble Sillages", description: "Fl, Cl, Tenor Sax & Video" },
+    { id: 13, date: "2024-Oct-05", city: "Münster, Germany", venue: "KLANGZEIT Festival für Neue Musik", title: "I am addicted", ensemble: "Violin: Anja Gaettens, Piano: Jannifer Hymer", description: "Premiered and commissioned by GNM Münster, funded by Zonta Club Münster" },
+    { id: 14, date: "2024-Sep", city: "Düsseldorf, Germany", venue: "Düsseldorf Festival! 2024", title: "11000 Saiten (G.F. Haas)", ensemble: "Ensemble Klangforum Wien", description: "As pianist" },
+    { id: 15, date: "2024-Aug-26", city: "Trento, Italy", venue: "MotoContrario Festival", title: "I can't live without", ensemble: "Ensemble MotoContrario", description: "" },
     { id: 16, date: "2024", city: "Essen, Germany", venue: "Folkwang Modern", title: "When I am with you", ensemble: "Large Ensemble", description: "" },
-    { id: 17, date: "2023-11-14", city: "Essen, Germany", venue: "Barbara Mauer 60. Geburtstag", title: "if only", ensemble: "Large Ensemble", description: "" },
-    { id: 18, date: "2023-11", city: "Essen, Germany", venue: "2nd West meet East Festival", title: "Silver lining", ensemble: "Piano, Violin, Viola", description: "Violin: Muzi Lyu, Viola: Margot de Moin, Piano: Lina Zhang" },
+    { id: 17, date: "2023-Nov-14", city: "Essen, Germany", venue: "Barbara Mauer 60. Geburtstag", title: "if only", ensemble: "Large Ensemble", description: "" },
+    { id: 18, date: "2023-Nov", city: "Essen, Germany", venue: "2nd West meet East Festival", title: "Silver lining", ensemble: "Piano, Violin, Viola", description: "Violin: Muzi Lyu, Viola: Margot de Moin, Piano: Lina Zhang" },
     { id: 19, date: "2023", city: "Essen, Germany", venue: "Folkwang University", title: "Purpur", ensemble: "Mezzosoprano and Ensemble", description: "" },
-    { id: 20, date: "2023-01", city: "Essen, Germany", venue: "Dancing Piano", title: "ONISM", ensemble: "Dance & Choreography: Clara Gremont", description: "Funded by DH.NRW Curriculum 4.0.nrw" },
-    { id: 21, date: "2022-11", city: "Essen, Germany", venue: "1st West meet East Festival", title: "whisper drops", ensemble: "String Quartet", description: "" },
+    { id: 20, date: "2023-Jan", city: "Essen, Germany", venue: "Dancing Piano", title: "ONISM", ensemble: "Dance & Choreography: Clara Gremont", description: "Funded by DH.NRW Curriculum 4.0.nrw" },
+    { id: 21, date: "2022-Nov", city: "Essen, Germany", venue: "1st West meet East Festival", title: "whisper drops", ensemble: "String Quartet", description: "" },
     { id: 23, date: "2021", city: "Essen, Germany", venue: "Folkwang University", title: "Lava", ensemble: "Flute, Clarinet, Cello, Piano", description: "" },
   ]
 };
