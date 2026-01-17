@@ -133,7 +133,7 @@ const EVENTS_DATA = {
   upcoming: [
     { 
       id: 1, 
-      date: "2026-March-27", 
+      date: "2026-03-27", 
       time: "19:30",
       city: "Stuttgart, Germany", 
       venue: "Konzertsaal, HMDK Stuttgart", 
@@ -147,7 +147,7 @@ const EVENTS_DATA = {
   archive: [
     { 
       id: 2, 
-      date: "2026-01-14", 
+      date: "2026-Jan-14", 
       city: "Köln, Germany", 
       venue: "Musik der Zeit # ATELIER", 
       title: "vacuum travel: 55 days", 
