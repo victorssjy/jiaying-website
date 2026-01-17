@@ -171,10 +171,7 @@ const EVENTS_DATA = {
     { id: 19, date: "2023", city: "Essen, Germany", venue: "Folkwang University", title: "Purpur", ensemble: "Mezzosoprano and Ensemble", description: "" },
     { id: 20, date: "2023-01", city: "Essen, Germany", venue: "Dancing Piano", title: "ONISM", ensemble: "Dance & Choreography: Clara Gremont", description: "Funded by DH.NRW Curriculum 4.0.nrw" },
     { id: 21, date: "2022-11", city: "Essen, Germany", venue: "1st West meet East Festival", title: "whisper drops", ensemble: "String Quartet", description: "" },
-    { id: 22, date: "2022", city: "Essen, Germany", venue: "Folkwang University", title: "Dunkele Hause", ensemble: "Tape and Video", description: "" },
     { id: 23, date: "2021", city: "Essen, Germany", venue: "Folkwang University", title: "Lava", ensemble: "Flute, Clarinet, Cello, Piano", description: "" },
-    { id: 24, date: "2020", city: "Essen, Germany", venue: "Folkwang University", title: "Allein", ensemble: "Tenor and Piano", description: "" },
-    { id: 25, date: "2020", city: "Essen, Germany", venue: "Folkwang University", title: "Virus", ensemble: "Tenor and Ensemble", description: "" },
   ]
 };
 
