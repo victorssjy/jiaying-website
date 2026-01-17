@@ -767,7 +767,7 @@ export default function App() {
           </h1>
           <div className="flex items-center justify-center gap-4 text-white/40">
             <div className="h-px w-8 bg-white/20"></div>
-            <p className="tracking-[0.5em] text-[20px] md:text-xs uppercase font-light">
+            <p className="tracking-[0.5em] text-[50px] md:text-xs uppercase font-light">
               Composer
             </p>
             <div className="h-px w-8 bg-white/20"></div>
