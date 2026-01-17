@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
-import { Music, User, MapPin, Facebook, Download, Image, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { Music, User, MapPin, Facebook, Download, ChevronLeft, ChevronRight, X, ZoomIn, ZoomOut, RotateCw } from 'lucide-react';
+import * as pdfjsLib from 'pdfjs-dist';
+
+// Set PDF.js worker
+pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
 
 // --- STATIC ASSETS ---
 const PROFILE_PHOTO = "/images/profile.jpg";
@@ -268,37 +272,281 @@ const ModalWrapper = ({ title, children, onClose }) => (
   </div>
 );
 
-// Score Viewer Component (reusable)
+// Score Viewer Component with PDF.js Canvas Rendering
 const ScoreViewer = ({ work, onClose }) => {
-  if (!work || !work.pdfUrl) return null;
+  const canvasRef = useRef(null);
+  const containerRef = useRef(null);
+  const [pdf, setPdf] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+  const [scale, setScale] = useState(1.2);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   
+  const WATERMARK_TEXT = "© JIAYING HE";
+  const MIN_SCALE = 0.5;
+  const MAX_SCALE = 3.0;
+  const SCALE_STEP = 0.2;
+
+  // Block keyboard shortcuts
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // Block Ctrl/Cmd + P (print), S (save), Shift+S (save as)
+      if ((e.ctrlKey || e.metaKey) && ['p', 's', 'P', 'S'].includes(e.key)) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+      // Arrow key navigation
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        setCurrentPage(p => Math.max(1, p - 1));
+      }
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        setCurrentPage(p => Math.min(totalPages, p + 1));
+      }
+      // Escape to close
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    
+    document.addEventListener('keydown', handleKeyDown, true);
+    return () => document.removeEventListener('keydown', handleKeyDown, true);
+  }, [totalPages, onClose]);
+
+  // Load PDF
+  useEffect(() => {
+    if (!work?.pdfUrl) return;
+    
+    setLoading(true);
+    setError(null);
+    
+    const loadPdf = async () => {
+      try {
+        const loadingTask = pdfjsLib.getDocument(work.pdfUrl);
+        const pdfDoc = await loadingTask.promise;
+        setPdf(pdfDoc);
+        setTotalPages(pdfDoc.numPages);
+        setCurrentPage(1);
+        setLoading(false);
+      } catch (err) {
+        console.error('Error loading PDF:', err);
+        setError('Failed to load score. Please try again.');
+        setLoading(false);
+      }
+    };
+    
+    loadPdf();
+    
+    return () => {
+      setPdf(null);
+    };
+  }, [work?.pdfUrl]);
+
+  // Render current page
+  const renderPage = useCallback(async () => {
+    if (!pdf || !canvasRef.current) return;
+    
+    try {
+      const page = await pdf.getPage(currentPage);
+      const viewport = page.getViewport({ scale });
+      const canvas = canvasRef.current;
+      const context = canvas.getContext('2d');
+      
+      // Set canvas dimensions
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+      
+      // Render PDF page
+      await page.render({
+        canvasContext: context,
+        viewport: viewport
+      }).promise;
+      
+      // Draw watermarks on canvas
+      context.save();
+      context.globalAlpha = 0.06;
+      context.fillStyle = '#000000';
+      
+      // Calculate font size based on canvas size
+      const fontSize = Math.max(24, Math.min(canvas.width, canvas.height) / 15);
+      context.font = `bold ${fontSize}px Arial, sans-serif`;
+      context.textAlign = 'center';
+      context.textBaseline = 'middle';
+      
+      // Draw multiple watermarks in a grid pattern
+      const rows = 4;
+      const cols = 3;
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+          const x = (canvas.width / (cols + 1)) * (col + 1);
+          const y = (canvas.height / (rows + 1)) * (row + 1);
+          
+          context.save();
+          context.translate(x, y);
+          context.rotate(-30 * Math.PI / 180);
+          context.fillText(WATERMARK_TEXT, 0, 0);
+          context.restore();
+        }
+      }
+      
+      // Center watermark (larger)
+      context.globalAlpha = 0.04;
+      const centerFontSize = fontSize * 1.5;
+      context.font = `bold ${centerFontSize}px Arial, sans-serif`;
+      context.save();
+      context.translate(canvas.width / 2, canvas.height / 2);
+      context.rotate(-30 * Math.PI / 180);
+      context.fillText(WATERMARK_TEXT, 0, 0);
+      context.restore();
+      
+      context.restore();
+      
+    } catch (err) {
+      console.error('Error rendering page:', err);
+    }
+  }, [pdf, currentPage, scale]);
+
+  useEffect(() => {
+    renderPage();
+  }, [renderPage]);
+
+  // Prevent context menu
+  const handleContextMenu = (e) => {
+    e.preventDefault();
+    return false;
+  };
+
+  // Navigation handlers
+  const goToPrevPage = () => setCurrentPage(p => Math.max(1, p - 1));
+  const goToNextPage = () => setCurrentPage(p => Math.min(totalPages, p + 1));
+  const zoomIn = () => setScale(s => Math.min(MAX_SCALE, s + SCALE_STEP));
+  const zoomOut = () => setScale(s => Math.max(MIN_SCALE, s - SCALE_STEP));
+  const resetZoom = () => setScale(1.2);
+
+  if (!work || !work.pdfUrl) return null;
+
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90">
-      <div className="relative w-full h-full max-w-6xl max-h-[90vh] m-4">
+    <div 
+      className="fixed inset-0 z-[60] flex flex-col bg-black/95"
+      onContextMenu={handleContextMenu}
+    >
+      {/* Header */}
+      <div className="flex items-center justify-between px-4 py-3 bg-black/80 border-b border-white/10">
+        <div className="text-white font-light tracking-wider">
+          <span className="text-white/60 text-sm">Score:</span>{' '}
+          <span>{work.title}</span>
+        </div>
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 bg-white rounded-full hover:bg-gray-100 transition-colors"
+          className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"
+          title="Close (Esc)"
         >
-          <X size={20} />
+          <X size={24} />
         </button>
-        
-        {/* Watermark */}
-        <div className="absolute inset-0 pointer-events-none z-10 flex items-center justify-center">
-          <div className="text-white/10 text-6xl font-bold rotate-[-30deg] select-none tracking-widest">
-            © JIAYING HE
+      </div>
+
+      {/* Canvas Container */}
+      <div 
+        ref={containerRef}
+        className="flex-1 overflow-auto flex items-start justify-center p-4"
+        onContextMenu={handleContextMenu}
+        style={{ userSelect: 'none', WebkitUserSelect: 'none' }}
+      >
+        {loading && (
+          <div className="flex items-center justify-center h-full">
+            <div className="text-white/60 text-lg">Loading score...</div>
           </div>
-        </div>
+        )}
         
-        <div className="w-full h-full bg-white rounded overflow-hidden">
-          <iframe 
-            src={`${work.pdfUrl}#toolbar=0&navpanes=0&scrollbar=0`}
-            className="w-full h-full"
-            title={work.title}
+        {error && (
+          <div className="flex items-center justify-center h-full">
+            <div className="text-red-400 text-lg">{error}</div>
+          </div>
+        )}
+        
+        {!loading && !error && (
+          <canvas 
+            ref={canvasRef}
+            className="shadow-2xl"
+            onContextMenu={handleContextMenu}
+            onDragStart={(e) => e.preventDefault()}
+            style={{ 
+              userSelect: 'none',
+              WebkitUserSelect: 'none',
+              maxWidth: '100%',
+              height: 'auto'
+            }}
           />
+        )}
+      </div>
+
+      {/* Footer Controls */}
+      <div className="flex items-center justify-between px-4 py-3 bg-black/80 border-t border-white/10">
+        {/* Page Navigation */}
+        <div className="flex items-center gap-2">
+          <button 
+            onClick={goToPrevPage}
+            disabled={currentPage <= 1}
+            className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            title="Previous Page (←)"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          
+          <div className="text-white/80 text-sm min-w-[80px] text-center">
+            <span className="text-white">{currentPage}</span>
+            <span className="text-white/50"> / {totalPages}</span>
+          </div>
+          
+          <button 
+            onClick={goToNextPage}
+            disabled={currentPage >= totalPages}
+            className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            title="Next Page (→)"
+          >
+            <ChevronRight size={20} />
+          </button>
         </div>
-        
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/80 text-white px-4 py-2 rounded text-sm">
-          {work.title} • View Only
+
+        {/* Zoom Controls */}
+        <div className="flex items-center gap-2">
+          <button 
+            onClick={zoomOut}
+            disabled={scale <= MIN_SCALE}
+            className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            title="Zoom Out"
+          >
+            <ZoomOut size={18} />
+          </button>
+          
+          <div className="text-white/60 text-xs min-w-[50px] text-center">
+            {Math.round(scale * 100)}%
+          </div>
+          
+          <button 
+            onClick={zoomIn}
+            disabled={scale >= MAX_SCALE}
+            className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            title="Zoom In"
+          >
+            <ZoomIn size={18} />
+          </button>
+          
+          <button 
+            onClick={resetZoom}
+            className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded transition-colors ml-1"
+            title="Reset Zoom"
+          >
+            <RotateCw size={16} />
+          </button>
+        </div>
+
+        {/* Copyright Notice */}
+        <div className="text-white/40 text-xs tracking-wider">
+          View Only • © Jiaying He
         </div>
       </div>
     </div>
