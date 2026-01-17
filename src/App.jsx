@@ -133,7 +133,7 @@ const EVENTS_DATA = {
   upcoming: [
     { 
       id: 1, 
-      date: "2026-03-27", 
+      date: "2026-March-27", 
       time: "19:30",
       city: "Stuttgart, Germany", 
       venue: "Konzertsaal, HMDK Stuttgart", 
