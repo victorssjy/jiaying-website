@@ -219,7 +219,7 @@ const WORKS_DATA = [
   { id: 9, title: "I am acc...", year: 2025, instrumentation: "Duo", category: "Duo", duration: "ca. 7'30\"", pdfUrl: "/files/I am acc... 2.pdf", audioUrl: "https://soundcloud.com/8ghtlom8bgsd/i-am-acc-2025" },
   { id: 10, title: "Hallo World!", year: 2025, instrumentation: "Ensemble & Tape", category: "Ensemble", duration: "ca. 11'30\"", pdfUrl: "files/hallo world！2025 9.pdf", audioUrl: "https://soundcloud.com/8ghtlom8bgsd/hallo-world" },
   { id: 11, title: "Peekaboo", year: 2025, instrumentation: "Trio", category: "Trio", duration: "ca. 4'", pdfUrl: "/files/peekaboo 2025 3.pdf", audioUrl: "https://soundcloud.com/8ghtlom8bgsd/peekaboo-2025" },
-  { id: 12, title: "sieh hinüber …", year: 2022, instrumentation: "Ensemble", category: "Ensemble", duration: "ca. 8'25\"", pdfUrl: "/files/sieh hinüber... (2022) 15.pdf", audioUrl: null },
+  { id: 12, title: "sieh hinüber …", year: 2022, instrumentation: "Ensemble", category: "Ensemble", duration: "ca. 8'25\"", pdfUrl: "files/sieh hinüber... (2022) 15.pdf", audioUrl: null },
   { id: 13, title: "Silver lining", year: 2023, instrumentation: "Trio", category: "Trio", duration: "ca. 8'", pdfUrl: "/files/silver lining 11.pdf", audioUrl: "https://soundcloud.com/8ghtlom8bgsd/silver-lining" },
   { id: 14, title: "whisper drops", year: 2022, instrumentation: "Streichquartett", category: "Streichquartett", duration: "ca. 9'47\"", pdfUrl: "/files/whisper drops.pdf", audioUrl: "https://soundcloud.com/8ghtlom8bgsd/whisper-drops-2022" },
   // Works without scores
