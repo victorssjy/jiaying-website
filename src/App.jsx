@@ -69,6 +69,47 @@ const CV_DATA = {
       "Bourse d'artiste \"Auf geht's\" 2022 – Ministère de la Culture et des Sciences du Land de Rhénanie-du-Nord-Westphalie",
       "Bourse d'artiste \"Auf geht's\" 2021 – Ministère de la Culture et des Sciences du Land de Rhénanie-du-Nord-Westphalie"
     ]
+  },
+  festivals: {
+    en: [
+      "Kompositionswerkstatt des SWR (2026)",
+      "Musik der Zeit, Kompositionswerkstatt des WDR und des Landesmusikrats NRW (2026)",
+      "Now! Festival Essen (Oct./Nov. 2025)",
+      "blurred edges Festival für aktuelle Musik Hamburg (2025)",
+      "Wittener Tage für neue Kammermusik (2025)",
+      "Impuls 14th International Ensemble and Composer Academy for Contemporary Music, Graz (Feb. 2025)",
+      "Composition and Sound Experimentation Workshop Mixtur (Oct. 2024)",
+      "MotoContrario Festival and International Composition Masterclass with Malin Bang (Aug. 2024)",
+      "Impuls 13th International Ensemble and Composer Academy for Contemporary Music (Aug. 2023)",
+      "Next Generation Donaueschinger Musiktage (Oct. 2022)",
+      "Next_generation 9.0 in Zentrum für Kunst und Medien (ZKM) (June 2022)"
+    ],
+    de: [
+      "Kompositionswerkstatt des SWR (2026)",
+      "Musik der Zeit, Kompositionswerkstatt des WDR und des Landesmusikrats NRW (2026)",
+      "Now! Festival Essen (Okt./Nov. 2025)",
+      "blurred edges Festival für aktuelle Musik Hamburg (2025)",
+      "Wittener Tage für neue Kammermusik (2025)",
+      "Impuls 14. Internationale Ensemble- und Komponistenakademie für zeitgenössische Musik, Graz (Feb. 2025)",
+      "Composition and Sound Experimentation Workshop Mixtur (Okt. 2024)",
+      "MotoContrario Festival und Internationale Kompositions-Meisterklasse mit Malin Bang (Aug. 2024)",
+      "Impuls 13. Internationale Ensemble- und Komponistenakademie für zeitgenössische Musik (Aug. 2023)",
+      "Next Generation Donaueschinger Musiktage (Okt. 2022)",
+      "Next_generation 9.0 im Zentrum für Kunst und Medien (ZKM) (Juni 2022)"
+    ],
+    fr: [
+      "Kompositionswerkstatt des SWR (2026)",
+      "Musik der Zeit, Kompositionswerkstatt des WDR und des Landesmusikrats NRW (2026)",
+      "Now! Festival Essen (oct./nov. 2025)",
+      "blurred edges Festival für aktuelle Musik Hamburg (2025)",
+      "Wittener Tage für neue Kammermusik (2025)",
+      "Impuls 14e Académie internationale d'ensemble et de composition pour la musique contemporaine, Graz (fév. 2025)",
+      "Composition and Sound Experimentation Workshop Mixtur (oct. 2024)",
+      "MotoContrario Festival et Masterclass internationale de composition avec Malin Bang (août 2024)",
+      "Impuls 13e Académie internationale d'ensemble et de composition pour la musique contemporaine (août 2023)",
+      "Next Generation Donaueschinger Musiktage (oct. 2022)",
+      "Next_generation 9.0 au Zentrum für Kunst und Medien (ZKM) (juin 2022)"
+    ]
   }
 };
 
@@ -160,6 +201,7 @@ const BioContent = () => {
 
   const tabs = [
     { id: 'bio', label: { en: 'Biography', de: 'Biografie', fr: 'Biographie' } },
+    { id: 'festivals', label: { en: 'Festivals', de: 'Festivals', fr: 'Festivals' } },
     { id: 'awards', label: { en: 'Awards', de: 'Auszeichnungen', fr: 'Prix' } },
     { id: 'scholarships', label: { en: 'Scholarships', de: 'Stipendien', fr: 'Bourses' } }
   ];
