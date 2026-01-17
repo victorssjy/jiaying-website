@@ -151,7 +151,16 @@ const EVENTS_DATA = {
       description: "Conductor: Baldur Brönnimann. Orchestration: 2222/4231/2perc.1pauken/Klavier/108643",
       url: "https://www1.wdr.de/orchester-und-chor/sinfonieorchester/konzerte/termine/mdz-atelier-100.html"
     },
-    { id: 3, date: "2025-12-18", city: "Oberhausen, Germany", venue: "Oberhausen Orchestra Concert", title: "Und doch bewegt es sich", ensemble: "Bergische Symphoniker", description: "Accordion: Yilin Han, Conductor: Prof. Oliver Leo Schmidt" },
+    { 
+      id: 3, 
+      date: "2025-12-18", 
+      city: "Oberhausen, Germany", 
+      venue: "Oberhausen Orchestra Concert", 
+      title: "Und doch bewegt es sich", 
+      ensemble: "Bergische Symphoniker", 
+      description: "Accordion: Yilin Han, Conductor: Prof. Oliver Leo Schmidt",
+      url: "https://www.bergischesymphoniker.de/konzert/gastspiel-oberhausen-25-jahre-musik-der-zunkunft-631564806/"
+    },
     { id: 4, date: "2025-12-05", city: "Essen, Germany", venue: "Szene 10 Theater", title: "Cette porte ne s'ouvre pas", ensemble: "Ensemble Catinblack", description: "Commissioned by Ensemble Catinblack" },
     { id: 5, date: "2025-11-08", city: "Essen, Germany", venue: "Now! Festival 2025", title: "Elements Chaos I/II", ensemble: "Interdisciplinary Composition", description: "Video: Doyeon Kim, Director: Roman Pfeifer. Funded by Essen Philharmonic, Folkwang University of Arts" },
     { 
@@ -211,7 +220,6 @@ const WORKS_DATA = [
   { id: 14, title: "whisper drops", year: 2022, instrumentation: "Streichquartett", category: "Streichquartett", duration: "ca. 9'47\"", pdfUrl: "/files/whisper drops.pdf", audioUrl: "https://soundcloud.com/8ghtlom8bgsd/whisper-drops-2022" },
   // Works without scores
   { id: 15, title: "Elements Chaos I/II", year: 2025, instrumentation: "Interdisciplinary", category: "Interdisciplinary", duration: null, pdfUrl: null, audioUrl: null },
-  { id: 16, title: "Just last one beat", year: 2025, instrumentation: "Electronic Tape & Ensemble", category: "Ensemble", duration: "ca. 45'", pdfUrl: null, audioUrl: null },
   { id: 17, title: "Endless labyrinths (Kafka - das Schloss)", year: 2025, instrumentation: "Dance, Electronics, Viola", category: "Interdisciplinary", duration: null, pdfUrl: null, audioUrl: null },
   { id: 18, title: "Doppelwendeltreppe/Hofgasse 15", year: 2025, instrumentation: "Performance", category: "Performance", duration: null, pdfUrl: null, audioUrl: null },
   { id: 19, title: "vacuum travel II", year: 2024, instrumentation: "Ensemble & Video", category: "Ensemble", duration: null, pdfUrl: null, audioUrl: null },
@@ -767,7 +775,7 @@ export default function App() {
           </h1>
           <div className="flex items-center justify-center gap-4 text-white/40">
             <div className="h-px w-8 bg-white/20"></div>
-            <p className="tracking-[0.5em] text-[50px] md:text-xs uppercase font-light">
+            <p className="tracking-[0.5em] text-sm md:text-base lg:text-lg uppercase font-light">
               Composer
             </p>
             <div className="h-px w-8 bg-white/20"></div>
