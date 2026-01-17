@@ -107,29 +107,13 @@ const EVENTS_DATA = {
 
 // --- SCORES DATA ---
 const SCORES_DATA = [
-  { id: 1, title: "troublemaker", year: 2025, instrumentation: "Orchestra (2222/4231/Pk 2perc./Harfe/14128106)", duration: "ca. 8'", pdfUrl: null },
-  { id: 2, title: "vacuum travel 55 days", year: 2025, instrumentation: "Orchestra (2222/4231/Pk 2perc./Klavier/108643)", duration: "ca. 8'55\"", pdfUrl: null },
-  { id: 3, title: "Und doch bewegt es sich", year: 2025, instrumentation: "Orchestra with Accordion", duration: "ca. 8'55\"", pdfUrl: null },
-  { id: 4, title: "Cette porte n'ouvre pas", year: 2025, instrumentation: "Ensemble Catinblack", duration: "ca. 8'", pdfUrl: null },
-  { id: 5, title: "Elements Chaos I/II", year: 2025, instrumentation: "Interdisciplinary", duration: "", pdfUrl: null },
-  { id: 6, title: "ligne de fuite", year: 2025, instrumentation: "Percussion Ensemble (8-10)", duration: "ca. 7'", pdfUrl: null },
-  { id: 7, title: "Hallo world!", year: 2025, instrumentation: "Large Ensemble & Electronic Tape", duration: "ca. 12'", pdfUrl: null },
-  { id: 8, title: "Endless labyrinths II", year: 2025, instrumentation: "Solo Viola & Tape", duration: "", pdfUrl: null },
-  { id: 9, title: "I am acc…", year: 2025, instrumentation: "Violin & Piano", duration: "9'46\"", pdfUrl: null },
-  { id: 10, title: "Peekaboo", year: 2025, instrumentation: "Violin, Cello, Piano", duration: "4'46\"", pdfUrl: null },
-  { id: 11, title: "Wunderland", year: 2025, instrumentation: "Ensemble & Tape", duration: "ca. 7'55\"", pdfUrl: null },
-  { id: 12, title: "I am addicted", year: 2024, instrumentation: "Violin & Piano", duration: "7'46\"", pdfUrl: null },
-  { id: 13, title: "Vacuum Travel", year: 2024, instrumentation: "Fl, Cl, Sax & Video", duration: "2'30\"", pdfUrl: null },
-  { id: 14, title: "I can't live without", year: 2024, instrumentation: "Ensemble (fl. Cl. Sax. Trumpet. Piano)", duration: "4'46\"", pdfUrl: null },
-  { id: 15, title: "When I am with you", year: 2024, instrumentation: "Large Ensemble", duration: "13'46\"", pdfUrl: null },
-  { id: 16, title: "if only", year: 2023, instrumentation: "Large Ensemble", duration: "3'", pdfUrl: null },
-  { id: 17, title: "Silver lining", year: 2023, instrumentation: "Piano, Violin, Viola", duration: "8'36\"", pdfUrl: null },
-  { id: 18, title: "Purpur", year: 2023, instrumentation: "Mezzosoprano & Ensemble", duration: "8'38\"", pdfUrl: null },
-  { id: 19, title: "whisper drops", year: 2022, instrumentation: "String Quartet", duration: "9'48\"", pdfUrl: null },
-  { id: 20, title: "Dunkele Hause", year: 2022, instrumentation: "Tape & Video", duration: "1'48\"", pdfUrl: null },
-  { id: 21, title: "Lava", year: 2021, instrumentation: "Flute, Clarinet, Cello, Piano", duration: "6'48\"", pdfUrl: null },
-  { id: 22, title: "Allein", year: 2020, instrumentation: "Tenor & Piano", duration: "2'48\"", pdfUrl: null },
-  { id: 23, title: "Virus", year: 2020, instrumentation: "Tenor & Ensemble", duration: "2'40\"", pdfUrl: null },
+  { id: 1, title: "Troublemaker", year: 2025, instrumentation: "Orchestra", duration: "8'", pdfUrl: "/files/partitur troublemaker 14.pdf" },
+  { id: 2, title: "ligne de fuite", year: 2025, instrumentation: "", duration: "", pdfUrl: "/files/ligne de fuite.pdf" },
+  { id: 3, title: "Und doch bewegt es sich", year: 2025, instrumentation: "Orchestra", duration: "", pdfUrl: "/files/Und doch bewegt es sich 17.pdf" },
+  { id: 4, title: "vacuum travel: 55 days", year: 2025, instrumentation: "Orchestra", duration: "8'55\"", pdfUrl: "/files/vacuum travel 14.pdf" },
+  { id: 5, title: "Wunderland", year: 2025, instrumentation: "Ensemble & Tape", duration: "7'55\"", pdfUrl: "/files/Wunderland 15.pdf" },
+  { id: 6, title: "When I am with you", year: 2025, instrumentation: "Ensemble", duration: "12'30\"", pdfUrl: "/files/when i am with you 25.pdf" },
+  { id: 7, title: "Purpur", year: 2023, instrumentation: "Mezzo-Soprano & Ensemble", duration: "9'", pdfUrl: "/files/prupur jiayinghe .pdf" },
 ];
 
 // --- COMPONENTS ---
