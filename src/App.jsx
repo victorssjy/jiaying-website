@@ -272,13 +272,11 @@ const ModalWrapper = ({ title, children, onClose }) => (
   </div>
 );
 
-// Score Viewer Component with PDF.js Canvas Rendering
+// Score Viewer Component with PDF.js Canvas Rendering - Scrollable View
 const ScoreViewer = ({ work, onClose }) => {
-  const canvasRef = useRef(null);
   const containerRef = useRef(null);
   const [pdf, setPdf] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
+  const [pages, setPages] = useState([]);
   const [scale, setScale] = useState(1.2);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -291,22 +289,11 @@ const ScoreViewer = ({ work, onClose }) => {
   // Block keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e) => {
-      // Block Ctrl/Cmd + P (print), S (save), Shift+S (save as)
       if ((e.ctrlKey || e.metaKey) && ['p', 's', 'P', 'S'].includes(e.key)) {
         e.preventDefault();
         e.stopPropagation();
         return false;
       }
-      // Arrow key navigation
-      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-        e.preventDefault();
-        setCurrentPage(p => Math.max(1, p - 1));
-      }
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-        e.preventDefault();
-        setCurrentPage(p => Math.min(totalPages, p + 1));
-      }
-      // Escape to close
       if (e.key === 'Escape') {
         onClose();
       }
@@ -314,7 +301,7 @@ const ScoreViewer = ({ work, onClose }) => {
     
     document.addEventListener('keydown', handleKeyDown, true);
     return () => document.removeEventListener('keydown', handleKeyDown, true);
-  }, [totalPages, onClose]);
+  }, [onClose]);
 
   // Load PDF
   useEffect(() => {
@@ -328,8 +315,10 @@ const ScoreViewer = ({ work, onClose }) => {
         const loadingTask = pdfjsLib.getDocument(work.pdfUrl);
         const pdfDoc = await loadingTask.promise;
         setPdf(pdfDoc);
-        setTotalPages(pdfDoc.numPages);
-        setCurrentPage(1);
+        
+        // Create array of page numbers
+        const pageNumbers = Array.from({ length: pdfDoc.numPages }, (_, i) => i + 1);
+        setPages(pageNumbers);
         setLoading(false);
       } catch (err) {
         console.error('Error loading PDF:', err);
@@ -342,76 +331,9 @@ const ScoreViewer = ({ work, onClose }) => {
     
     return () => {
       setPdf(null);
+      setPages([]);
     };
   }, [work?.pdfUrl]);
-
-  // Render current page
-  const renderPage = useCallback(async () => {
-    if (!pdf || !canvasRef.current) return;
-    
-    try {
-      const page = await pdf.getPage(currentPage);
-      const viewport = page.getViewport({ scale });
-      const canvas = canvasRef.current;
-      const context = canvas.getContext('2d');
-      
-      // Set canvas dimensions
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
-      
-      // Render PDF page
-      await page.render({
-        canvasContext: context,
-        viewport: viewport
-      }).promise;
-      
-      // Draw watermarks on canvas
-      context.save();
-      context.globalAlpha = 0.06;
-      context.fillStyle = '#000000';
-      
-      // Calculate font size based on canvas size
-      const fontSize = Math.max(24, Math.min(canvas.width, canvas.height) / 15);
-      context.font = `bold ${fontSize}px Arial, sans-serif`;
-      context.textAlign = 'center';
-      context.textBaseline = 'middle';
-      
-      // Draw multiple watermarks in a grid pattern
-      const rows = 4;
-      const cols = 3;
-      for (let row = 0; row < rows; row++) {
-        for (let col = 0; col < cols; col++) {
-          const x = (canvas.width / (cols + 1)) * (col + 1);
-          const y = (canvas.height / (rows + 1)) * (row + 1);
-          
-          context.save();
-          context.translate(x, y);
-          context.rotate(-30 * Math.PI / 180);
-          context.fillText(WATERMARK_TEXT, 0, 0);
-          context.restore();
-        }
-      }
-      
-      // Center watermark (larger)
-      context.globalAlpha = 0.04;
-      const centerFontSize = fontSize * 1.5;
-      context.font = `bold ${centerFontSize}px Arial, sans-serif`;
-      context.save();
-      context.translate(canvas.width / 2, canvas.height / 2);
-      context.rotate(-30 * Math.PI / 180);
-      context.fillText(WATERMARK_TEXT, 0, 0);
-      context.restore();
-      
-      context.restore();
-      
-    } catch (err) {
-      console.error('Error rendering page:', err);
-    }
-  }, [pdf, currentPage, scale]);
-
-  useEffect(() => {
-    renderPage();
-  }, [renderPage]);
 
   // Prevent context menu
   const handleContextMenu = (e) => {
@@ -419,9 +341,6 @@ const ScoreViewer = ({ work, onClose }) => {
     return false;
   };
 
-  // Navigation handlers
-  const goToPrevPage = () => setCurrentPage(p => Math.max(1, p - 1));
-  const goToNextPage = () => setCurrentPage(p => Math.min(totalPages, p + 1));
   const zoomIn = () => setScale(s => Math.min(MAX_SCALE, s + SCALE_STEP));
   const zoomOut = () => setScale(s => Math.max(MIN_SCALE, s - SCALE_STEP));
   const resetZoom = () => setScale(1.2);
@@ -438,6 +357,9 @@ const ScoreViewer = ({ work, onClose }) => {
         <div className="text-white font-light tracking-wider">
           <span className="text-white/60 text-sm">Score:</span>{' '}
           <span>{work.title}</span>
+          {pages.length > 0 && (
+            <span className="text-white/40 text-sm ml-2">({pages.length} pages)</span>
+          )}
         </div>
         <button 
           onClick={onClose}
@@ -448,10 +370,10 @@ const ScoreViewer = ({ work, onClose }) => {
         </button>
       </div>
 
-      {/* Canvas Container */}
+      {/* Scrollable Canvas Container */}
       <div 
         ref={containerRef}
-        className="flex-1 overflow-auto flex items-start justify-center p-4"
+        className="flex-1 overflow-auto flex flex-col items-center py-4 gap-4"
         onContextMenu={handleContextMenu}
         style={{ userSelect: 'none', WebkitUserSelect: 'none' }}
       >
@@ -467,48 +389,23 @@ const ScoreViewer = ({ work, onClose }) => {
           </div>
         )}
         
-        {!loading && !error && (
-          <canvas 
-            ref={canvasRef}
-            className="shadow-2xl"
+        {!loading && !error && pdf && pages.map((pageNum) => (
+          <PageCanvas 
+            key={pageNum}
+            pdf={pdf}
+            pageNum={pageNum}
+            scale={scale}
+            watermarkText={WATERMARK_TEXT}
             onContextMenu={handleContextMenu}
-            onDragStart={(e) => e.preventDefault()}
-            style={{ 
-              userSelect: 'none',
-              WebkitUserSelect: 'none',
-              maxWidth: '100%',
-              height: 'auto'
-            }}
           />
-        )}
+        ))}
       </div>
 
       {/* Footer Controls */}
       <div className="flex items-center justify-between px-4 py-3 bg-black/80 border-t border-white/10">
-        {/* Page Navigation */}
-        <div className="flex items-center gap-2">
-          <button 
-            onClick={goToPrevPage}
-            disabled={currentPage <= 1}
-            className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-            title="Previous Page (←)"
-          >
-            <ChevronLeft size={20} />
-          </button>
-          
-          <div className="text-white/80 text-sm min-w-[80px] text-center">
-            <span className="text-white">{currentPage}</span>
-            <span className="text-white/50"> / {totalPages}</span>
-          </div>
-          
-          <button 
-            onClick={goToNextPage}
-            disabled={currentPage >= totalPages}
-            className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-            title="Next Page (→)"
-          >
-            <ChevronRight size={20} />
-          </button>
+        {/* Page Count */}
+        <div className="text-white/60 text-sm">
+          {pages.length} page{pages.length !== 1 ? 's' : ''}
         </div>
 
         {/* Zoom Controls */}
@@ -548,6 +445,111 @@ const ScoreViewer = ({ work, onClose }) => {
         <div className="text-white/40 text-xs tracking-wider">
           View Only • © Jiaying He
         </div>
+      </div>
+    </div>
+  );
+};
+
+// Individual Page Canvas Component
+const PageCanvas = ({ pdf, pageNum, scale, watermarkText, onContextMenu }) => {
+  const canvasRef = useRef(null);
+  const [rendered, setRendered] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    
+    const renderPage = async () => {
+      if (!pdf || !canvasRef.current) return;
+      
+      try {
+        const page = await pdf.getPage(pageNum);
+        if (cancelled) return;
+        
+        const viewport = page.getViewport({ scale });
+        const canvas = canvasRef.current;
+        const context = canvas.getContext('2d');
+        
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+        
+        await page.render({
+          canvasContext: context,
+          viewport: viewport
+        }).promise;
+        
+        if (cancelled) return;
+        
+        // Draw watermarks
+        context.save();
+        context.globalAlpha = 0.06;
+        context.fillStyle = '#000000';
+        
+        const fontSize = Math.max(24, Math.min(canvas.width, canvas.height) / 15);
+        context.font = `bold ${fontSize}px Arial, sans-serif`;
+        context.textAlign = 'center';
+        context.textBaseline = 'middle';
+        
+        const rows = 4;
+        const cols = 3;
+        for (let row = 0; row < rows; row++) {
+          for (let col = 0; col < cols; col++) {
+            const x = (canvas.width / (cols + 1)) * (col + 1);
+            const y = (canvas.height / (rows + 1)) * (row + 1);
+            
+            context.save();
+            context.translate(x, y);
+            context.rotate(-30 * Math.PI / 180);
+            context.fillText(watermarkText, 0, 0);
+            context.restore();
+          }
+        }
+        
+        context.globalAlpha = 0.04;
+        const centerFontSize = fontSize * 1.5;
+        context.font = `bold ${centerFontSize}px Arial, sans-serif`;
+        context.save();
+        context.translate(canvas.width / 2, canvas.height / 2);
+        context.rotate(-30 * Math.PI / 180);
+        context.fillText(watermarkText, 0, 0);
+        context.restore();
+        
+        context.restore();
+        setRendered(true);
+        
+      } catch (err) {
+        console.error(`Error rendering page ${pageNum}:`, err);
+      }
+    };
+    
+    renderPage();
+    
+    return () => {
+      cancelled = true;
+    };
+  }, [pdf, pageNum, scale, watermarkText]);
+
+  return (
+    <div className="relative">
+      {!rendered && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-200 min-h-[200px] min-w-[150px]">
+          <span className="text-gray-400 text-sm">Loading page {pageNum}...</span>
+        </div>
+      )}
+      <canvas 
+        ref={canvasRef}
+        className="shadow-2xl bg-white"
+        onContextMenu={onContextMenu}
+        onDragStart={(e) => e.preventDefault()}
+        style={{ 
+          userSelect: 'none',
+          WebkitUserSelect: 'none',
+          maxWidth: '100%',
+          height: 'auto'
+        }}
+      />
+      {/* Page number indicator */}
+      <div className="absolute bottom-2 right-2 bg-black/50 text-white/70 text-xs px-2 py-1 rounded">
+        {pageNum}
       </div>
     </div>
   );
