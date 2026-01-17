@@ -112,7 +112,7 @@ const SCORES_DATA = [
   { id: 3, title: "Und doch bewegt es sich", year: 2025, instrumentation: "Orchestra", duration: "ca. 9'", pdfUrl: "/files/Und doch bewegt es sich 17.pdf" },
   { id: 4, title: "vacuum travel: 55 days", year: 2025, instrumentation: "Orchestra", duration: "ca. 8'55\"", pdfUrl: "/files/vacuum travel 14.pdf" },
   { id: 5, title: "Wunderland", year: 2025, instrumentation: "Ensemble & Tape", duration: "ca. 7'55\"", pdfUrl: "/files/Wunderland 15.pdf" },
-  { id: 6, title: "When I am with you", year: 2025, instrumentation: "Ensemble", duration: "ca. 12'30\"", pdfUrl: "/files/when i am with you 25.pdf" },
+  { id: 6, title: "When I am with you", year: 2024, instrumentation: "Ensemble", duration: "ca. 12'30\"", pdfUrl: "/files/when i am with you 25.pdf" },
   { id: 7, title: "Purpur", year: 2023, instrumentation: "Mezzo-Soprano & Ensemble", duration: "ca. 9'", pdfUrl: "/files/prupur jiayinghe .pdf" },
 ];
 
