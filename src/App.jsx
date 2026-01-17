@@ -38,32 +38,24 @@ const BIO_CONTENT = {
 };
 
 const CV_DATA = {
-  awards: {
+  awardsAndScholarships: {
     en: [
       "4th International Composer Competition New Music Generation 2022 – Horror Diploma Prize, Chamber Composition 2nd Division (21-27 years old)",
-      "European Composer Competition Vienna/Austria – 3rd Category Chamber Music, 2nd Prize (2021)"
-    ],
-    de: [
-      "4. Internationaler Kompositionswettbewerb New Music Generation 2022 – Horror Diploma Preis, Kammermusik 2. Kategorie (21-27 Jahre)",
-      "European Composer Competition Wien/Österreich – 3. Kategorie Kammermusik, 2. Preis (2021)"
-    ],
-    fr: [
-      "4e Concours international de composition New Music Generation 2022 – Prix Horror Diploma, Composition de chambre 2e division (21-27 ans)",
-      "European Composer Competition Vienne/Autriche – 3e catégorie Musique de chambre, 2e Prix (2021)"
-    ]
-  },
-  scholarships: {
-    en: [
+      "European Composer Competition Vienna/Austria – 3rd Category Chamber Music, 2nd Prize (2021)",
       "DAAD \"PROMOS\" Scholarship 2023 – Impuls 13th International Ensemble and Composer Academy for Contemporary Music",
       "Artist Scholarship \"Auf geht's\" 2022 – Ministry of Culture and Science of the State of North Rhine-Westphalia",
       "Artist Scholarship \"Auf geht's\" 2021 – Ministry of Culture and Science of the State of North Rhine-Westphalia"
     ],
     de: [
+      "4. Internationaler Kompositionswettbewerb New Music Generation 2022 – Horror Diploma Preis, Kammermusik 2. Kategorie (21-27 Jahre)",
+      "European Composer Competition Wien/Österreich – 3. Kategorie Kammermusik, 2. Preis (2021)",
       "DAAD \"PROMOS\" Stipendium 2023 – Impuls 13. Internationale Ensemble- und Komponistenakademie für zeitgenössische Musik",
       "Künstlerstipendium \"Auf geht's\" 2022 – Ministerium für Kultur und Wissenschaft des Landes Nordrhein-Westfalen",
       "Künstlerstipendium \"Auf geht's\" 2021 – Ministerium für Kultur und Wissenschaft des Landes Nordrhein-Westfalen"
     ],
     fr: [
+      "4e Concours international de composition New Music Generation 2022 – Prix Horror Diploma, Composition de chambre 2e division (21-27 ans)",
+      "European Composer Competition Vienne/Autriche – 3e catégorie Musique de chambre, 2e Prix (2021)",
       "Bourse DAAD \"PROMOS\" 2023 – Impuls 13e Académie internationale d'ensemble et de composition pour la musique contemporaine",
       "Bourse d'artiste \"Auf geht's\" 2022 – Ministère de la Culture et des Sciences du Land de Rhénanie-du-Nord-Westphalie",
       "Bourse d'artiste \"Auf geht's\" 2021 – Ministère de la Culture et des Sciences du Land de Rhénanie-du-Nord-Westphalie"
@@ -145,22 +137,38 @@ const EVENTS_DATA = {
   ]
 };
 
-// --- WORKS DATA (formerly SCORES_DATA) ---
+// --- WORKS DATA ---
+// instrumentation: display text shown on the work
+// category: used for filtering (groups ensemble variants under "Ensemble")
 const WORKS_DATA = [
-  { id: 1, title: "Troublemaker", year: 2025, instrumentation: "Orchestra", duration: "ca. 8'", pdfUrl: "/files/partitur troublemaker 14.pdf" },
-  { id: 2, title: "ligne de fuite", year: 2025, instrumentation: "Ensemble", duration: "ca. 6'30\"", pdfUrl: "/files/ligne de fuite.pdf" },
-  { id: 3, title: "Und doch bewegt es sich", year: 2025, instrumentation: "Orchestra", duration: "ca. 9'", pdfUrl: "/files/Und doch bewegt es sich 17.pdf" },
-  { id: 4, title: "vacuum travel: 55 days", year: 2025, instrumentation: "Orchestra", duration: "ca. 8'55\"", pdfUrl: "/files/vacuum travel 14.pdf" },
-  { id: 5, title: "Wunderland", year: 2025, instrumentation: "Ensemble & Tape", duration: "ca. 7'55\"", pdfUrl: "/files/Wunderland 15.pdf" },
-  { id: 6, title: "When I am with you", year: 2024, instrumentation: "Ensemble", duration: "ca. 12'30\"", pdfUrl: "/files/when i am with you 25.pdf" },
-  { id: 7, title: "Purpur", year: 2023, instrumentation: "Mezzo-Soprano & Ensemble", duration: "ca. 9'", pdfUrl: "/files/prupur jiayinghe .pdf" },
-  { id: 8, title: "Cette porte ne s'ouvre pas", year: 2025, instrumentation: "Trio", duration: "ca. 8'", pdfUrl: "/files/CatinBlack Ensemble 3.pdf" },
-  { id: 9, title: "I am acc...", year: 2025, instrumentation: "Duo", duration: "ca. 7'30\"", pdfUrl: "/files/I am acc... 2.pdf" },
-  { id: 10, title: "Hallo World!", year: 2025, instrumentation: "Ensemble & Tape", duration: "ca. 11'30\"", pdfUrl: "/files/hallo world!  2025 9.pdf" },
-  { id: 11, title: "Peekaboo", year: 2025, instrumentation: "Trio", duration: "ca. 4'", pdfUrl: "/files/peekaboo 2025 3.pdf" },
-  { id: 12, title: "sieh hinüber …", year: 2022, instrumentation: "Ensemble", duration: "ca. 8'25\"", pdfUrl: "/files/sieh hinüber... (2022) 15.pdf" },
-  { id: 13, title: "Silver lining", year: 2023, instrumentation: "Trio", duration: "ca. 8'", pdfUrl: "/files/silver lining 11.pdf" },
-  { id: 14, title: "whisper drops", year: 2022, instrumentation: "Streichquartett", duration: "ca. 9'47\"", pdfUrl: "/files/whisper drops.pdf" },
+  { id: 1, title: "Troublemaker", year: 2025, instrumentation: "Orchestra", category: "Orchestra", duration: "ca. 8'", pdfUrl: "/files/partitur troublemaker 14.pdf" },
+  { id: 2, title: "ligne de fuite", year: 2025, instrumentation: "Ensemble", category: "Ensemble", duration: "ca. 6'30\"", pdfUrl: "/files/ligne de fuite.pdf" },
+  { id: 3, title: "Und doch bewegt es sich", year: 2025, instrumentation: "Orchestra", category: "Orchestra", duration: "ca. 9'", pdfUrl: "/files/Und doch bewegt es sich 17.pdf" },
+  { id: 4, title: "vacuum travel: 55 days", year: 2025, instrumentation: "Orchestra", category: "Orchestra", duration: "ca. 8'55\"", pdfUrl: "/files/vacuum travel 14.pdf" },
+  { id: 5, title: "Wunderland", year: 2025, instrumentation: "Ensemble & Tape", category: "Ensemble", duration: "ca. 7'55\"", pdfUrl: "/files/Wunderland 15.pdf" },
+  { id: 6, title: "When I am with you", year: 2024, instrumentation: "große Ensemble", category: "Ensemble", duration: "ca. 12'30\"", pdfUrl: "/files/when i am with you 25.pdf" },
+  { id: 7, title: "Purpur", year: 2023, instrumentation: "Mezzo-Soprano & Ensemble", category: "Ensemble", duration: "ca. 9'", pdfUrl: "/files/prupur jiayinghe .pdf" },
+  { id: 8, title: "Cette porte ne s'ouvre pas", year: 2025, instrumentation: "Trio", category: "Trio", duration: "ca. 8'", pdfUrl: "/files/CatinBlack Ensemble 3.pdf" },
+  { id: 9, title: "I am acc...", year: 2025, instrumentation: "Duo", category: "Duo", duration: "ca. 7'30\"", pdfUrl: "/files/I am acc... 2.pdf" },
+  { id: 10, title: "Hallo World!", year: 2025, instrumentation: "Ensemble & Tape", category: "Ensemble", duration: "ca. 11'30\"", pdfUrl: "/files/hallo world!  2025 9.pdf" },
+  { id: 11, title: "Peekaboo", year: 2025, instrumentation: "Trio", category: "Trio", duration: "ca. 4'", pdfUrl: "/files/peekaboo 2025 3.pdf" },
+  { id: 12, title: "sieh hinüber …", year: 2022, instrumentation: "Ensemble", category: "Ensemble", duration: "ca. 8'25\"", pdfUrl: "/files/sieh hinüber... (2022) 15.pdf" },
+  { id: 13, title: "Silver lining", year: 2023, instrumentation: "Trio", category: "Trio", duration: "ca. 8'", pdfUrl: "/files/silver lining 11.pdf" },
+  { id: 14, title: "whisper drops", year: 2022, instrumentation: "Streichquartett", category: "Streichquartett", duration: "ca. 9'47\"", pdfUrl: "/files/whisper drops.pdf" },
+  // Works without scores
+  { id: 15, title: "Elements Chaos I/II", year: 2025, instrumentation: "Interdisciplinary", category: "Interdisciplinary", duration: null, pdfUrl: null },
+  { id: 16, title: "Just last one beat", year: 2025, instrumentation: "Electronic Tape & Ensemble", category: "Ensemble", duration: "ca. 45'", pdfUrl: null },
+  { id: 17, title: "Endless labyrinths (Kafka - das Schloss)", year: 2025, instrumentation: "Dance, Electronics, Viola", category: "Interdisciplinary", duration: null, pdfUrl: null },
+  { id: 18, title: "Doppelwendeltreppe/Hofgasse 15", year: 2025, instrumentation: "Performance", category: "Performance", duration: null, pdfUrl: null },
+  { id: 19, title: "vacuum travel II", year: 2024, instrumentation: "Ensemble & Video", category: "Ensemble", duration: null, pdfUrl: null },
+  { id: 20, title: "I am addicted", year: 2024, instrumentation: "Duo", category: "Duo", duration: null, pdfUrl: null },
+  { id: 21, title: "I can't live without", year: 2024, instrumentation: "Ensemble", category: "Ensemble", duration: null, pdfUrl: null },
+  { id: 22, title: "if only", year: 2023, instrumentation: "große Ensemble", category: "Ensemble", duration: null, pdfUrl: null },
+  { id: 23, title: "ONISM", year: 2023, instrumentation: "Dance & Piano", category: "Interdisciplinary", duration: null, pdfUrl: null },
+  { id: 24, title: "Dunkele Hause", year: 2022, instrumentation: "Tape & Video", category: "Electronics", duration: null, pdfUrl: null },
+  { id: 25, title: "Lava", year: 2021, instrumentation: "Quartet", category: "Quartet", duration: null, pdfUrl: null },
+  { id: 26, title: "Allein", year: 2020, instrumentation: "Tenor & Piano", category: "Duo", duration: null, pdfUrl: null },
+  { id: 27, title: "Virus", year: 2020, instrumentation: "Tenor & Ensemble", category: "Ensemble", duration: null, pdfUrl: null },
 ];
 
 // --- HELPER FUNCTION ---
@@ -178,7 +186,7 @@ const findMatchingWork = (eventTitle) => {
 
 // Get unique values for filters
 const getUniqueYears = () => [...new Set(WORKS_DATA.map(w => w.year))].sort((a, b) => b - a);
-const getUniqueInstrumentations = () => [...new Set(WORKS_DATA.map(w => w.instrumentation))].sort();
+const getUniqueCategories = () => [...new Set(WORKS_DATA.map(w => w.category))].sort();
 
 // --- COMPONENTS ---
 
@@ -242,8 +250,7 @@ const BioContent = () => {
   const tabs = [
     { id: 'bio', label: { en: 'Biography', de: 'Biografie', fr: 'Biographie' } },
     { id: 'festivals', label: { en: 'Festivals', de: 'Festivals', fr: 'Festivals' } },
-    { id: 'awards', label: { en: 'Awards', de: 'Auszeichnungen', fr: 'Prix' } },
-    { id: 'scholarships', label: { en: 'Scholarships', de: 'Stipendien', fr: 'Bourses' } }
+    { id: 'awardsAndScholarships', label: { en: 'Awards & Scholarships', de: 'Auszeichnungen & Stipendien', fr: 'Prix & Bourses' } }
   ];
 
   return (
@@ -300,19 +307,9 @@ const BioContent = () => {
         </ul>
       )}
 
-      {activeTab === 'awards' && (
+      {activeTab === 'awardsAndScholarships' && (
         <ul className="space-y-6">
-          {CV_DATA.awards[lang].map((award, idx) => (
-            <li key={idx} className="text-gray-700 font-light leading-relaxed pl-4 border-l-2 border-gray-100 hover:border-black transition-colors">
-              {award}
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {activeTab === 'scholarships' && (
-        <ul className="space-y-6">
-          {CV_DATA.scholarships[lang].map((item, idx) => (
+          {CV_DATA.awardsAndScholarships[lang].map((item, idx) => (
             <li key={idx} className="text-gray-700 font-light leading-relaxed pl-4 border-l-2 border-gray-100 hover:border-black transition-colors">
               {item}
             </li>
@@ -323,7 +320,7 @@ const BioContent = () => {
   );
 };
 
-const CalendarContent = ({ onViewScore }) => {
+const CalendarContent = () => {
   const [viewingWork, setViewingWork] = useState(null);
 
   const handleViewScore = (work) => {
@@ -408,15 +405,15 @@ const CalendarContent = ({ onViewScore }) => {
 const WorksContent = () => {
   const [selectedWork, setSelectedWork] = useState(null);
   const [filterYear, setFilterYear] = useState('all');
-  const [filterInstrumentation, setFilterInstrumentation] = useState('all');
+  const [filterCategory, setFilterCategory] = useState('all');
 
   const years = getUniqueYears();
-  const instrumentations = getUniqueInstrumentations();
+  const categories = getUniqueCategories();
 
   const filteredWorks = WORKS_DATA.filter(work => {
     const yearMatch = filterYear === 'all' || work.year === parseInt(filterYear);
-    const instrMatch = filterInstrumentation === 'all' || work.instrumentation === filterInstrumentation;
-    return yearMatch && instrMatch;
+    const categoryMatch = filterCategory === 'all' || work.category === filterCategory;
+    return yearMatch && categoryMatch;
   });
 
   return (
@@ -449,23 +446,23 @@ const WorksContent = () => {
           </div>
         </div>
 
-        {/* Instrumentation Filter */}
+        {/* Instrumentation Filter (by category) */}
         <div>
           <h4 className="text-xs uppercase tracking-[0.2em] text-gray-400 mb-3 font-medium">Instrumentation</h4>
           <div className="flex flex-wrap gap-2">
             <button
-              onClick={() => setFilterInstrumentation('all')}
-              className={`px-3 py-1.5 text-xs uppercase tracking-wider transition-all ${filterInstrumentation === 'all' ? 'bg-black text-white' : 'border border-gray-200 text-gray-500 hover:border-black'}`}
+              onClick={() => setFilterCategory('all')}
+              className={`px-3 py-1.5 text-xs uppercase tracking-wider transition-all ${filterCategory === 'all' ? 'bg-black text-white' : 'border border-gray-200 text-gray-500 hover:border-black'}`}
             >
               All
             </button>
-            {instrumentations.map(instr => (
+            {categories.map(cat => (
               <button
-                key={instr}
-                onClick={() => setFilterInstrumentation(instr)}
-                className={`px-3 py-1.5 text-xs uppercase tracking-wider transition-all ${filterInstrumentation === instr ? 'bg-black text-white' : 'border border-gray-200 text-gray-500 hover:border-black'}`}
+                key={cat}
+                onClick={() => setFilterCategory(cat)}
+                className={`px-3 py-1.5 text-xs uppercase tracking-wider transition-all ${filterCategory === cat ? 'bg-black text-white' : 'border border-gray-200 text-gray-500 hover:border-black'}`}
               >
-                {instr}
+                {cat}
               </button>
             ))}
           </div>
@@ -488,13 +485,17 @@ const WorksContent = () => {
             <div className="flex items-center gap-4 mt-3 md:mt-0">
               {work.duration && <span className="text-xs text-gray-400">{work.duration}</span>}
               <span className="text-xs text-gray-300">{work.year}</span>
-              {work.pdfUrl && (
+              {work.pdfUrl ? (
                 <button 
                   onClick={() => setSelectedWork(work)}
                   className="px-3 py-1.5 text-xs uppercase tracking-wider bg-black text-white hover:bg-gray-800 transition-colors"
                 >
                   View Score
                 </button>
+              ) : (
+                <span className="px-3 py-1.5 text-xs uppercase tracking-wider text-gray-300 border border-gray-200">
+                  No Score
+                </span>
               )}
             </div>
           </div>
