@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Music, User, MapPin, Facebook, Download, Image, ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 // --- STATIC ASSETS ---
-// These paths work after placing files in /public folder
 const PROFILE_PHOTO = "/images/profile.jpg";
 const CV_FILE = "/files/CV_Jiaying_He.pdf";
 const BACKGROUND_IMAGE = "/images/background.jpg";
@@ -146,8 +145,8 @@ const EVENTS_DATA = {
   ]
 };
 
-// --- SCORES DATA ---
-const SCORES_DATA = [
+// --- WORKS DATA (formerly SCORES_DATA) ---
+const WORKS_DATA = [
   { id: 1, title: "Troublemaker", year: 2025, instrumentation: "Orchestra", duration: "ca. 8'", pdfUrl: "/files/partitur troublemaker 14.pdf" },
   { id: 2, title: "ligne de fuite", year: 2025, instrumentation: "Ensemble", duration: "ca. 6'30\"", pdfUrl: "/files/ligne de fuite.pdf" },
   { id: 3, title: "Und doch bewegt es sich", year: 2025, instrumentation: "Orchestra", duration: "ca. 9'", pdfUrl: "/files/Und doch bewegt es sich 17.pdf" },
@@ -155,7 +154,7 @@ const SCORES_DATA = [
   { id: 5, title: "Wunderland", year: 2025, instrumentation: "Ensemble & Tape", duration: "ca. 7'55\"", pdfUrl: "/files/Wunderland 15.pdf" },
   { id: 6, title: "When I am with you", year: 2024, instrumentation: "Ensemble", duration: "ca. 12'30\"", pdfUrl: "/files/when i am with you 25.pdf" },
   { id: 7, title: "Purpur", year: 2023, instrumentation: "Mezzo-Soprano & Ensemble", duration: "ca. 9'", pdfUrl: "/files/prupur jiayinghe .pdf" },
-  { id: 8, title: "Cette porte ne s'ouvre pas", year: 2025, instrumentation: "Ensemble Catinblack", duration: "ca. 8'", pdfUrl: "/files/CatinBlack Ensemble 3.pdf" },
+  { id: 8, title: "Cette porte ne s'ouvre pas", year: 2025, instrumentation: "Ensemble", duration: "ca. 8'", pdfUrl: "/files/CatinBlack Ensemble 3.pdf" },
   { id: 9, title: "I am acc...", year: 2025, instrumentation: "Duo", duration: "ca. 7'30\"", pdfUrl: "/files/I am acc... 2.pdf" },
   { id: 10, title: "Hallo World!", year: 2025, instrumentation: "Ensemble & Tape", duration: "ca. 11'30\"", pdfUrl: "/files/hallo world!  2025 9.pdf" },
   { id: 11, title: "Peekaboo", year: 2025, instrumentation: "Trio", duration: "ca. 4'", pdfUrl: "/files/peekaboo 2025 3.pdf" },
@@ -165,17 +164,21 @@ const SCORES_DATA = [
 ];
 
 // --- HELPER FUNCTION ---
-const findMatchingScore = (eventTitle) => {
+const findMatchingWork = (eventTitle) => {
   const normalizedEventTitle = eventTitle.toLowerCase().trim();
-  return SCORES_DATA.find(score => {
-    const normalizedScoreTitle = score.title.toLowerCase().trim();
-    return score.pdfUrl && (
-      normalizedEventTitle === normalizedScoreTitle ||
-      normalizedEventTitle.includes(normalizedScoreTitle) ||
-      normalizedScoreTitle.includes(normalizedEventTitle)
+  return WORKS_DATA.find(work => {
+    const normalizedWorkTitle = work.title.toLowerCase().trim();
+    return work.pdfUrl && (
+      normalizedEventTitle === normalizedWorkTitle ||
+      normalizedEventTitle.includes(normalizedWorkTitle) ||
+      normalizedWorkTitle.includes(normalizedEventTitle)
     );
   });
 };
+
+// Get unique values for filters
+const getUniqueYears = () => [...new Set(WORKS_DATA.map(w => w.year))].sort((a, b) => b - a);
+const getUniqueInstrumentations = () => [...new Set(WORKS_DATA.map(w => w.instrumentation))].sort();
 
 // --- COMPONENTS ---
 
@@ -194,6 +197,43 @@ const ModalWrapper = ({ title, children, onClose }) => (
     </div>
   </div>
 );
+
+// Score Viewer Component (reusable)
+const ScoreViewer = ({ work, onClose }) => {
+  if (!work || !work.pdfUrl) return null;
+  
+  return (
+    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90">
+      <div className="relative w-full h-full max-w-6xl max-h-[90vh] m-4">
+        <button 
+          onClick={onClose}
+          className="absolute top-4 right-4 z-10 p-2 bg-white rounded-full hover:bg-gray-100 transition-colors"
+        >
+          <X size={20} />
+        </button>
+        
+        {/* Watermark */}
+        <div className="absolute inset-0 pointer-events-none z-10 flex items-center justify-center">
+          <div className="text-white/10 text-6xl font-bold rotate-[-30deg] select-none tracking-widest">
+            © JIAYING HE
+          </div>
+        </div>
+        
+        <div className="w-full h-full bg-white rounded overflow-hidden">
+          <iframe 
+            src={`${work.pdfUrl}#toolbar=0&navpanes=0&scrollbar=0`}
+            className="w-full h-full"
+            title={work.title}
+          />
+        </div>
+        
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/80 text-white px-4 py-2 rounded text-sm">
+          {work.title} • View Only
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const BioContent = () => {
   const [lang, setLang] = useState('en');
@@ -284,20 +324,30 @@ const BioContent = () => {
 };
 
 const CalendarContent = ({ onViewScore }) => {
+  const [viewingWork, setViewingWork] = useState(null);
+
+  const handleViewScore = (work) => {
+    setViewingWork(work);
+  };
+
+  const handleCloseScore = () => {
+    setViewingWork(null);
+  };
+
   return (
     <div className="space-y-12">
       <div>
         <h3 className="text-sm font-bold uppercase tracking-[0.3em] text-gray-400 mb-6">Upcoming</h3>
         <div className="grid gap-4">
           {EVENTS_DATA.upcoming.map(evt => {
-            const matchedScore = findMatchingScore(evt.title);
+            const matchedWork = findMatchingWork(evt.title);
             return (
               <div key={evt.id} className="group flex flex-col md:flex-row md:items-start bg-gray-50 p-6 transition-all hover:bg-black hover:text-white">
                 <div className="md:w-40 mb-2 md:mb-0 flex-shrink-0 text-xl font-light tracking-tighter group-hover:text-white/80">{evt.date}</div>
                 <div className="flex-1">
-                  {matchedScore ? (
+                  {matchedWork ? (
                     <h4 
-                      onClick={() => onViewScore(matchedScore)}
+                      onClick={() => handleViewScore(matchedWork)}
                       className="text-xl font-normal mb-1 uppercase tracking-wider cursor-pointer underline decoration-1 underline-offset-4 hover:decoration-2"
                     >
                       {evt.title} →
@@ -322,14 +372,14 @@ const CalendarContent = ({ onViewScore }) => {
         <h3 className="text-sm font-bold uppercase tracking-[0.3em] text-gray-400 mb-6">Archive</h3>
         <div className="grid gap-2">
           {EVENTS_DATA.archive.map(evt => {
-            const matchedScore = findMatchingScore(evt.title);
+            const matchedWork = findMatchingWork(evt.title);
             return (
               <div key={evt.id} className="flex flex-col md:flex-row md:items-center p-4 border-b border-gray-100 text-gray-500 hover:bg-gray-50 transition-colors">
                 <div className="md:w-28 font-mono text-xs flex-shrink-0">{evt.date}</div>
                 <div className="flex-1 text-sm font-light">
-                  {matchedScore ? (
+                  {matchedWork ? (
                     <span 
-                      onClick={() => onViewScore(matchedScore)}
+                      onClick={() => handleViewScore(matchedWork)}
                       className="font-medium text-gray-800 cursor-pointer underline decoration-1 underline-offset-2 hover:decoration-2 hover:text-black"
                     >
                       {evt.title} →
@@ -346,23 +396,28 @@ const CalendarContent = ({ onViewScore }) => {
           })}
         </div>
       </div>
+
+      {/* Score Viewer within Calendar - closes back to Calendar */}
+      {viewingWork && (
+        <ScoreViewer work={viewingWork} onClose={handleCloseScore} />
+      )}
     </div>
   );
 };
 
-const ScoresContent = ({ initialScoreId }) => {
-  const [selectedScore, setSelectedScore] = useState(() => {
-    if (initialScoreId) {
-      return SCORES_DATA.find(s => s.id === initialScoreId) || null;
-    }
-    return null;
-  });
-  const years = [...new Set(SCORES_DATA.map(s => s.year))].sort((a, b) => b - a);
+const WorksContent = () => {
+  const [selectedWork, setSelectedWork] = useState(null);
   const [filterYear, setFilterYear] = useState('all');
+  const [filterInstrumentation, setFilterInstrumentation] = useState('all');
 
-  const filteredScores = filterYear === 'all' 
-    ? SCORES_DATA 
-    : SCORES_DATA.filter(s => s.year === parseInt(filterYear));
+  const years = getUniqueYears();
+  const instrumentations = getUniqueInstrumentations();
+
+  const filteredWorks = WORKS_DATA.filter(work => {
+    const yearMatch = filterYear === 'all' || work.year === parseInt(filterYear);
+    const instrMatch = filterInstrumentation === 'all' || work.instrumentation === filterInstrumentation;
+    return yearMatch && instrMatch;
+  });
 
   return (
     <div className="space-y-8">
@@ -370,38 +425,72 @@ const ScoresContent = ({ initialScoreId }) => {
         <p className="text-sm text-gray-500 italic">Scores are available for viewing only. Downloads are disabled to protect copyright.</p>
       </div>
 
-      {/* Year Filter */}
-      <div className="flex flex-wrap justify-center gap-2 mb-8">
-        <button
-          onClick={() => setFilterYear('all')}
-          className={`px-3 py-1 text-xs uppercase tracking-wider transition-all ${filterYear === 'all' ? 'bg-black text-white' : 'border border-gray-200 text-gray-500 hover:border-black'}`}
-        >
-          All
-        </button>
-        {years.map(year => (
-          <button
-            key={year}
-            onClick={() => setFilterYear(year.toString())}
-            className={`px-3 py-1 text-xs uppercase tracking-wider transition-all ${filterYear === year.toString() ? 'bg-black text-white' : 'border border-gray-200 text-gray-500 hover:border-black'}`}
-          >
-            {year}
-          </button>
-        ))}
+      {/* Filters */}
+      <div className="space-y-6 mb-8">
+        {/* Year Filter */}
+        <div>
+          <h4 className="text-xs uppercase tracking-[0.2em] text-gray-400 mb-3 font-medium">Year</h4>
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => setFilterYear('all')}
+              className={`px-3 py-1.5 text-xs uppercase tracking-wider transition-all ${filterYear === 'all' ? 'bg-black text-white' : 'border border-gray-200 text-gray-500 hover:border-black'}`}
+            >
+              All
+            </button>
+            {years.map(year => (
+              <button
+                key={year}
+                onClick={() => setFilterYear(year.toString())}
+                className={`px-3 py-1.5 text-xs uppercase tracking-wider transition-all ${filterYear === year.toString() ? 'bg-black text-white' : 'border border-gray-200 text-gray-500 hover:border-black'}`}
+              >
+                {year}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Instrumentation Filter */}
+        <div>
+          <h4 className="text-xs uppercase tracking-[0.2em] text-gray-400 mb-3 font-medium">Instrumentation</h4>
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => setFilterInstrumentation('all')}
+              className={`px-3 py-1.5 text-xs uppercase tracking-wider transition-all ${filterInstrumentation === 'all' ? 'bg-black text-white' : 'border border-gray-200 text-gray-500 hover:border-black'}`}
+            >
+              All
+            </button>
+            {instrumentations.map(instr => (
+              <button
+                key={instr}
+                onClick={() => setFilterInstrumentation(instr)}
+                className={`px-3 py-1.5 text-xs uppercase tracking-wider transition-all ${filterInstrumentation === instr ? 'bg-black text-white' : 'border border-gray-200 text-gray-500 hover:border-black'}`}
+              >
+                {instr}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
+      {/* Works Count */}
+      <div className="text-xs text-gray-400 uppercase tracking-wider mb-4">
+        {filteredWorks.length} work{filteredWorks.length !== 1 ? 's' : ''} found
+      </div>
+
+      {/* Works List */}
       <div className="grid gap-3">
-        {filteredScores.map(score => (
-          <div key={score.id} data-score-id={score.id} className="group flex flex-col md:flex-row md:items-center p-4 border border-gray-100 hover:border-black transition-colors">
+        {filteredWorks.map(work => (
+          <div key={work.id} data-work-id={work.id} className="group flex flex-col md:flex-row md:items-center p-4 border border-gray-100 hover:border-black transition-colors">
             <div className="flex-1">
-              <h4 className="font-medium text-gray-900">{score.title}</h4>
-              <p className="text-sm text-gray-500">{score.instrumentation}</p>
+              <h4 className="font-medium text-gray-900">{work.title}</h4>
+              <p className="text-sm text-gray-500">{work.instrumentation}</p>
             </div>
             <div className="flex items-center gap-4 mt-3 md:mt-0">
-              {score.duration && <span className="text-xs text-gray-400">{score.duration}</span>}
-              <span className="text-xs text-gray-300">{score.year}</span>
-              {score.pdfUrl && (
+              {work.duration && <span className="text-xs text-gray-400">{work.duration}</span>}
+              <span className="text-xs text-gray-300">{work.year}</span>
+              {work.pdfUrl && (
                 <button 
-                  onClick={() => setSelectedScore(score)}
+                  onClick={() => setSelectedWork(work)}
                   className="px-3 py-1.5 text-xs uppercase tracking-wider bg-black text-white hover:bg-gray-800 transition-colors"
                 >
                   View Score
@@ -412,37 +501,16 @@ const ScoresContent = ({ initialScoreId }) => {
         ))}
       </div>
 
-      {/* Score Viewer Modal */}
-      {selectedScore && selectedScore.pdfUrl && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90">
-          <div className="relative w-full h-full max-w-6xl max-h-[90vh] m-4">
-            <button 
-              onClick={() => setSelectedScore(null)}
-              className="absolute top-4 right-4 z-10 p-2 bg-white rounded-full hover:bg-gray-100 transition-colors"
-            >
-              <X size={20} />
-            </button>
-            
-            {/* Watermark */}
-            <div className="absolute inset-0 pointer-events-none z-10 flex items-center justify-center">
-              <div className="text-white/10 text-6xl font-bold rotate-[-30deg] select-none tracking-widest">
-                © JIAYING HE
-              </div>
-            </div>
-            
-            <div className="w-full h-full bg-white rounded overflow-hidden">
-              <iframe 
-                src={`${selectedScore.pdfUrl}#toolbar=0&navpanes=0&scrollbar=0`}
-                className="w-full h-full"
-                title={selectedScore.title}
-              />
-            </div>
-            
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/80 text-white px-4 py-2 rounded text-sm">
-              {selectedScore.title} • View Only
-            </div>
-          </div>
+      {/* No results */}
+      {filteredWorks.length === 0 && (
+        <div className="text-center py-12 text-gray-400">
+          No works found matching the selected filters.
         </div>
+      )}
+
+      {/* Score Viewer Modal */}
+      {selectedWork && (
+        <ScoreViewer work={selectedWork} onClose={() => setSelectedWork(null)} />
       )}
     </div>
   );
@@ -562,12 +630,6 @@ const ContactContent = () => (
 // --- MAIN APP ---
 export default function App() {
   const [activeSection, setActiveSection] = useState(null);
-  const [selectedScoreId, setSelectedScoreId] = useState(null);
-
-  const handleViewScoreFromCalendar = (score) => {
-    setSelectedScoreId(score.id);
-    setActiveSection('scores');
-  };
   
   return (
     <div className="relative w-full min-h-screen font-sans text-gray-900 overflow-hidden bg-black select-none">
@@ -617,16 +679,13 @@ export default function App() {
           {[
             { id: 'bio', label: 'Biography' },
             { id: 'calendar', label: 'Calendar' },
-            { id: 'scores', label: 'Scores' },
+            { id: 'works', label: 'Works' },
             { id: 'photos', label: 'Photos' },
             { id: 'contact', label: 'Contact' }
           ].map(nav => (
             <button 
               key={nav.id}
-              onClick={() => {
-                setSelectedScoreId(null);
-                setActiveSection(nav.id);
-              }}
+              onClick={() => setActiveSection(nav.id)}
               className="group relative px-4 py-2 text-sm tracking-[0.4em] uppercase font-light text-white/70 hover:text-white transition-colors"
             >
               {nav.label}
@@ -651,12 +710,12 @@ export default function App() {
       )}
       {activeSection === 'calendar' && (
         <ModalWrapper title="Calendar" onClose={() => setActiveSection(null)}>
-          <CalendarContent onViewScore={handleViewScoreFromCalendar} />
+          <CalendarContent />
         </ModalWrapper>
       )}
-      {activeSection === 'scores' && (
-        <ModalWrapper title="Scores" onClose={() => { setActiveSection(null); setSelectedScoreId(null); }}>
-          <ScoresContent initialScoreId={selectedScoreId} />
+      {activeSection === 'works' && (
+        <ModalWrapper title="Works" onClose={() => setActiveSection(null)}>
+          <WorksContent />
         </ModalWrapper>
       )}
       {activeSection === 'photos' && (
