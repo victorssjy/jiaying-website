@@ -10,6 +10,16 @@ const CONCERT_PHOTOS = [
   { id: 1, url: "/images/concert-1.jpg", caption: "WDR Sinfonieorchester - Musik der Zeit, Köln 2026" },
   { id: 2, url: "/images/concert-2.jpg", caption: "Bergische Symphoniker - Premiere with Conductor Prof. Oliver Leo Schmidt" },
   { id: 3, url: "/images/concert-3.jpg", caption: "Bergische Symphoniker - Und doch bewegt sich, Oberhausen 2025" },
+  { id: 4, url: "/images/P1.jpg", caption: "" },
+  { id: 5, url: "/images/P2.jpg", caption: "" },
+  { id: 6, url: "/images/P3.jpg", caption: "" },
+  { id: 7, url: "/images/P4.jpg", caption: "" },
+  { id: 8, url: "/images/P5.jpg", caption: "" },
+  { id: 9, url: "/images/P6.jpg", caption: "" },
+  { id: 10, url: "/images/P7.jpg", caption: "" },
+  { id: 11, url: "/images/P8.jpg", caption: "" },
+  { id: 12, url: "/images/P9.jpg", caption: "" },
+  { id: 13, url: "/images/P10.jpg", caption: "" },
 ];
 
 // --- BIOGRAPHY DATA ---
@@ -40,25 +50,34 @@ const BIO_CONTENT = {
 const CV_DATA = {
   awardsAndScholarships: {
     en: [
-      "4th International Composer Competition New Music Generation 2022 – Horror Diploma Prize, Chamber Composition 2nd Division (21-27 years old)",
-      "European Composer Competition Vienna/Austria – 3rd Category Chamber Music, 2nd Prize (2021)",
+      // Scholarships first
+      "Foundation Prix Monique Gabus Scholarship 2025 – France",
       "DAAD \"PROMOS\" Scholarship 2023 – Impuls 13th International Ensemble and Composer Academy for Contemporary Music",
       "Artist Scholarship \"Auf geht's\" 2022 – Ministry of Culture and Science of the State of North Rhine-Westphalia",
-      "Artist Scholarship \"Auf geht's\" 2021 – Ministry of Culture and Science of the State of North Rhine-Westphalia"
+      "Artist Scholarship \"Auf geht's\" 2021 – Ministry of Culture and Science of the State of North Rhine-Westphalia",
+      // Awards below
+      "4th International Composer Competition New Music Generation 2022 – Horror Diploma Prize, Chamber Composition 2nd Division (21-27 years old)",
+      "European Composer Competition Vienna/Austria – 3rd Category Chamber Music, 2nd Prize (2021)"
     ],
     de: [
-      "4. Internationaler Kompositionswettbewerb New Music Generation 2022 – Horror Diploma Preis, Kammermusik 2. Kategorie (21-27 Jahre)",
-      "European Composer Competition Wien/Österreich – 3. Kategorie Kammermusik, 2. Preis (2021)",
+      // Stipendien zuerst
+      "Fondation Prix Monique Gabus Stipendium 2025 – Frankreich",
       "DAAD \"PROMOS\" Stipendium 2023 – Impuls 13. Internationale Ensemble- und Komponistenakademie für zeitgenössische Musik",
       "Künstlerstipendium \"Auf geht's\" 2022 – Ministerium für Kultur und Wissenschaft des Landes Nordrhein-Westfalen",
-      "Künstlerstipendium \"Auf geht's\" 2021 – Ministerium für Kultur und Wissenschaft des Landes Nordrhein-Westfalen"
+      "Künstlerstipendium \"Auf geht's\" 2021 – Ministerium für Kultur und Wissenschaft des Landes Nordrhein-Westfalen",
+      // Auszeichnungen danach
+      "4. Internationaler Kompositionswettbewerb New Music Generation 2022 – Horror Diploma Preis, Kammermusik 2. Kategorie (21-27 Jahre)",
+      "European Composer Competition Wien/Österreich – 3. Kategorie Kammermusik, 2. Preis (2021)"
     ],
     fr: [
-      "4e Concours international de composition New Music Generation 2022 – Prix Horror Diploma, Composition de chambre 2e division (21-27 ans)",
-      "European Composer Competition Vienne/Autriche – 3e catégorie Musique de chambre, 2e Prix (2021)",
+      // Bourses d'abord
+      "Bourse de la Fondation Prix Monique Gabus 2025 – France",
       "Bourse DAAD \"PROMOS\" 2023 – Impuls 13e Académie internationale d'ensemble et de composition pour la musique contemporaine",
       "Bourse d'artiste \"Auf geht's\" 2022 – Ministère de la Culture et des Sciences du Land de Rhénanie-du-Nord-Westphalie",
-      "Bourse d'artiste \"Auf geht's\" 2021 – Ministère de la Culture et des Sciences du Land de Rhénanie-du-Nord-Westphalie"
+      "Bourse d'artiste \"Auf geht's\" 2021 – Ministère de la Culture et des Sciences du Land de Rhénanie-du-Nord-Westphalie",
+      // Prix ensuite
+      "4e Concours international de composition New Music Generation 2022 – Prix Horror Diploma, Composition de chambre 2e division (21-27 ans)",
+      "European Composer Competition Vienne/Autriche – 3e catégorie Musique de chambre, 2e Prix (2021)"
     ]
   },
   festivals: {
