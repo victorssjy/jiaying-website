@@ -730,16 +730,19 @@ export default function App() {
       
       {/* Background Image */}
       <div 
-        className="absolute inset-0 z-0 opacity-50 grayscale"
+        className="absolute inset-0 z-0 opacity-50"
         style={{
           backgroundImage: `url(${BACKGROUND_IMAGE})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
       />
-      
-      {/* Overlay */}
-      <div className="absolute inset-0 z-0 bg-black/40 mix-blend-multiply" />
+    
+      {/* Overlay - RAL 3024 荧光红 */}
+      <div 
+        className="absolute inset-0 z-0 mix-blend-multiply"
+        style={{ backgroundColor: 'rgba(247, 94, 37, 0.6)' }}
+      />
 
       {/* CV Download Button */}
       <a 
@@ -755,8 +758,8 @@ export default function App() {
         
         {/* Name */}
         <div className={`transition-all duration-1000 ${activeSection ? 'opacity-0 -translate-y-20 scale-95 pointer-events-none' : 'opacity-100 translate-y-0 scale-100'}`}>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-extralight tracking-[0.2em] text-center uppercase leading-tight mb-4">
-            Jiaying<br/>He
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extralight tracking-[0.2em] text-center uppercase leading-tight mb-4 whitespace-nowrap">
+            Jiaying He
           </h1>
           <div className="flex items-center justify-center gap-4 text-white/40">
             <div className="h-px w-8 bg-white/20"></div>
