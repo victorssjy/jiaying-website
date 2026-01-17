@@ -78,7 +78,7 @@ const EVENTS_DATA = {
     { id: 1, date: "2026-03-27", city: "Stuttgart, Germany", venue: "SWR", title: "troublemaker", ensemble: "SWR Sinfonieorchester", description: "Orchestration: 2222/4231/2perc.1pauken/Harfe/14121086" },
   ],
   archive: [
-    { id: 2, date: "2026-01-14", city: "Köln, Germany", venue: "Musik der Zeit # ATELIER", title: "vacuum travel 55 days", ensemble: "WDR Sinfonieorchester", description: "Conductor: Baldur Brönnimann" },
+    { id: 2, date: "2026-01-14", city: "Köln, Germany", venue: "Musik der Zeit # ATELIER", title: "vacuum travel: 55 days", ensemble: "WDR Sinfonieorchester", description: "Conductor: Baldur Brönnimann" },
     { id: 3, date: "2025-12-18", city: "Oberhausen, Germany", venue: "Oberhausen Orchestra Concert", title: "Und doch bewegt sich", ensemble: "Bergische Symphoniker", description: "Accordion: Yilin Han, Conductor: Prof. Oliver Leo Schmidt" },
     { id: 4, date: "2025-12-05", city: "Essen, Germany", venue: "Szene 10 Theater", title: "Cette porte n'ouvre pas", ensemble: "Ensemble Catinblack", description: "Commissioned by Ensemble Catinblack" },
     { id: 5, date: "2025-11-08", city: "Essen, Germany", venue: "Now! Festival 2025", title: "Elements Chaos I/II", ensemble: "Interdisciplinary Composition", description: "Video: Doyeon Kim, Director: Roman Pfeifer. Funded by Essen Philharmonic, Folkwang University of Arts" },
