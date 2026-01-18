@@ -15,7 +15,6 @@ const CONCERT_PHOTOS = [
   { id: 1, url: "/images/concert-1.jpg", caption: "WDR Sinfonieorchester - Musik der Zeit, Köln 2026" },
   { id: 2, url: "/images/concert-2.jpg", caption: "Bergische Symphoniker - Premiere with Conductor Prof. Oliver Leo Schmidt" },
   { id: 3, url: "/images/concert-3.jpg", caption: "Bergische Symphoniker - Und doch bewegt sich, Oberhausen 2025" },
-  { id: 4, url: "/images/P1.jpg", caption: "" },
   { id: 5, url: "/images/P2.jpg", caption: "" },
   { id: 6, url: "/images/P3.jpg", caption: "" },
   { id: 7, url: "/images/P4.jpg", caption: "now！festival 2025" },
