@@ -146,6 +146,18 @@ const EVENTS_DATA = {
       description: "Conductor: Jonathan Stockhammer. Orchestration: 2222/4131/2perc.1pauken/Harfe/1210864",
       url: "https://www.hmdk-stuttgart.de/veranstaltung/kompositionswerkstatt"
     },
+    {
+      id: 24, 
+      date: "2026-11-07", 
+      time: "",
+      city: "Köln, Germany", 
+      venue: "Kunststation St. Peter in Köln", 
+      address: "Jabachstraße 1, 50676 Köln",
+      title: "*New Work", 
+      ensemble: "Violin & Piano", 
+      description: "",
+      url: ""
+    },
   ],
   archive: [
     { 
