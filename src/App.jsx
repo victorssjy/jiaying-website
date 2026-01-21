@@ -1060,7 +1060,12 @@ export default function App() {
         <img 
           src={BACKGROUND_IMAGE}
           alt=""
-          className="w-full h-full object-cover opacity-50 grayscale"
+          className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale"
+          style={{
+            minWidth: '100vw',
+            minHeight: '100vh',
+            objectFit: 'cover'
+          }}
         />
       </div>
       
