@@ -9,7 +9,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 // --- STATIC ASSETS ---
 const PROFILE_PHOTO = "/images/profile.jpg";
 const CV_FILE = "/files/CV_Jiaying_He.pdf";
-const BACKGROUND_IMAGE = "/images/background.jpg";
+const BACKGROUND_IMAGE = "/images/background.png";
 
 const CONCERT_PHOTOS = [
   { id: 1, url: "/images/concert-1.jpg", caption: "WDR Sinfonieorchester - Musik der Zeit, Köln 2026" },
