@@ -1056,12 +1056,13 @@ export default function App() {
     <div className="relative w-full min-h-screen font-sans text-gray-900 overflow-hidden bg-black select-none">
       
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0 opacity-50 grayscale bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${BACKGROUND_IMAGE})`
-        }}
-      />
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <img 
+          src={BACKGROUND_IMAGE}
+          alt=""
+          className="w-full h-full object-cover opacity-50 grayscale"
+        />
+      </div>
       
       {/* Overlay */}
       <div className="absolute inset-0 z-0 bg-black/40 mix-blend-multiply" />
