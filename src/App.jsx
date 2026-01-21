@@ -1057,11 +1057,9 @@ export default function App() {
       
       {/* Background Image */}
       <div 
-        className="absolute inset-0 z-0 opacity-50 grayscale"
+        className="absolute inset-0 z-0 opacity-50 grayscale bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url(${BACKGROUND_IMAGE})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundImage: `url(${BACKGROUND_IMAGE})`
         }}
       />
       
