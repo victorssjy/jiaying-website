@@ -134,18 +134,6 @@ const CV_DATA = {
 // --- CALENDAR DATA ---
 const EVENTS_DATA = {
   upcoming: [
-    { 
-      id: 1, 
-      date: "2026-03-27", 
-      time: "19:30",
-      city: "Stuttgart, Germany", 
-      venue: "Konzertsaal, HMDK Stuttgart", 
-      address: "Urbanstraße 25, 70182 Stuttgart",
-      title: "Troublemaker", 
-      ensemble: "SWR Sinfonieorchester", 
-      description: "Conductor: Jonathan Stockhammer. Orchestration: 2222/4131/2perc.1pauken/Harfe/1210864",
-      url: "https://www.hmdk-stuttgart.de/veranstaltung/kompositionswerkstatt"
-    },
     {
       id: 24, 
       date: "2026-11-07", 
@@ -159,7 +147,19 @@ const EVENTS_DATA = {
       url: ""
     },
   ],
-  archive: [
+  archive: [    
+    { 
+      id: 1, 
+      date: "2026-03-27", 
+      time: "19:30",
+      city: "Stuttgart, Germany", 
+      venue: "Konzertsaal, HMDK Stuttgart", 
+      address: "Urbanstraße 25, 70182 Stuttgart",
+      title: "Troublemaker", 
+      ensemble: "SWR Sinfonieorchester", 
+      description: "Conductor: Jonathan Stockhammer. Orchestration: 2222/4131/2perc.1pauken/Harfe/1210864",
+      url: "https://www.hmdk-stuttgart.de/veranstaltung/kompositionswerkstatt"
+    },
     { 
       id: 2, 
       date: "2026-Jan-14", 
