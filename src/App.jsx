@@ -140,7 +140,7 @@ const EVENTS_DATA = {
       city: "Köln, Germany", 
       venue: "o-ton Saal 50678 Köln", 
       address: "Kyllstraße 7a, 50678 Köln",
-      title: "Cette porte n’ouvre pas", 
+      title: "Cette porte ne s'ouvre pas", 
       ensemble: "catinblack ensemble", 
       description: "",
       url: ""
