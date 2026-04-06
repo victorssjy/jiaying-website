@@ -176,7 +176,7 @@ const EVENTS_DATA = {
       city: "Essen, Germany", 
       venue: "Essen Phiharmonie", 
       address: "Huyssenallee 53, 45128 Essen",
-      title: "vacuum travel – 55 days", 
+      title: "vacuum travel: 55 days", 
       ensemble: "WDR Sinfonieorchester", 
       description: "Program: NOW！Festival 2026. Orchestration: 2222/4231/2perc.1pauken/Klavier/108643",
       url: ""
