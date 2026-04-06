@@ -138,7 +138,7 @@ const EVENTS_DATA = {
       date: "2026-10-01", 
       time: "",
       city: "Paris, France", 
-      venue: "", 
+      venue: "TBD", 
       address: "",
       title: "*New Work", 
       ensemble: "Orchestre Philharmonique de Radio France", 
