@@ -134,6 +134,30 @@ const CV_DATA = {
 const EVENTS_DATA = {
   upcoming: [
       {
+      id: 28, 
+      date: "2026-09-12", 
+      time: "13:00",
+      city: "Köln, Germany", 
+      venue: "Sankt Peter Kirche", 
+      address: "Jabachstraße 1, 50676 Köln",
+      title: "*New Work", 
+      ensemble: "TRIO vis-à-vis", 
+      description: "Program: Lunchkonzert in der Sankt Peter Kirche",
+      url: ""
+    },
+      {
+      id: 27, 
+      date: "2026-06-14", 
+      time: "11:30",
+      city: "Köln, Germany", 
+      venue: "o-ton Saal 50678 Köln", 
+      address: "Kyllstraße 7a, 50678 Köln",
+      title: "Cette porte n’ouvre pas", 
+      ensemble: "catinblack ensemble", 
+      description: "",
+      url: ""
+    },
+      {
       id: 25, 
       date: "2026-10-01", 
       time: "",
@@ -144,6 +168,18 @@ const EVENTS_DATA = {
       ensemble: "Orchestre Philharmonique de Radio France", 
       description: "Orchestration：3333/4331/3 perc 1 timp/Harp/1210844",
       url: "https://france-orchestres.com/concours-de-composition-deuxieme-edition/"
+    },
+      {
+      id: 26, 
+      date: "2026-11-06", 
+      time: "",
+      city: "Essen, Germany", 
+      venue: "Essen Phiharmonie", 
+      address: "Huyssenallee 53, 45128 Essen",
+      title: "vacuum travel – 55 days", 
+      ensemble: "WDR Sinfonieorchester", 
+      description: "Program: NOW！Festival 2026. Orchestration: 2222/4231/2perc.1pauken/Klavier/108643",
+      url: ""
     },
     {
       id: 24, 
