@@ -133,6 +133,18 @@ const CV_DATA = {
 // --- CALENDAR DATA ---
 const EVENTS_DATA = {
   upcoming: [
+       {
+      id: 27, 
+      date: "2026-06-14", 
+      time: "11:30",
+      city: "Köln, Germany", 
+      venue: "o-ton Saal 50678 Köln", 
+      address: "Kyllstraße 7a, 50678 Köln",
+      title: "Cette porte n’ouvre pas", 
+      ensemble: "catinblack ensemble", 
+      description: "",
+      url: ""
+    },
       {
       id: 28, 
       date: "2026-09-12", 
@@ -143,18 +155,6 @@ const EVENTS_DATA = {
       title: "*New Work", 
       ensemble: "TRIO vis-à-vis", 
       description: "Program: Lunchkonzert in der Sankt Peter Kirche",
-      url: ""
-    },
-      {
-      id: 27, 
-      date: "2026-06-14", 
-      time: "11:30",
-      city: "Köln, Germany", 
-      venue: "o-ton Saal 50678 Köln", 
-      address: "Kyllstraße 7a, 50678 Köln",
-      title: "Cette porte n’ouvre pas", 
-      ensemble: "catinblack ensemble", 
-      description: "",
       url: ""
     },
       {
