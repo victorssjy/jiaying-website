@@ -131,9 +131,20 @@ const CV_DATA = {
 };
 
 // --- CALENDAR DATA ---
-// --- CALENDAR DATA ---
 const EVENTS_DATA = {
   upcoming: [
+      {
+      id: 25, 
+      date: "2026-10-01", 
+      time: "",
+      city: "Paris, France", 
+      venue: "", 
+      address: "",
+      title: "*New Work", 
+      ensemble: "Orchestre Philharmonique de Radio France", 
+      description: "Orchestration：3333/4331/3 perc 1 timp/Harp/1210844",
+      url: "https://france-orchestres.com/concours-de-composition-deuxieme-edition/"
+    },
     {
       id: 24, 
       date: "2026-11-07", 
