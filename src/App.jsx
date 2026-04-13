@@ -179,7 +179,7 @@ const EVENTS_DATA = {
       title: "vacuum travel: 55 days", 
       ensemble: "WDR Sinfonieorchester", 
       description: "Program: NOW！Festival 2026. Orchestration: 2222/4231/2perc.1pauken/Klavier/108643",
-      url: ""
+      url: "https://www1.wdr.de/orchester-und-chor/sinfonieorchester/konzerte/termine/mdz-leicht-bewoelkt-100.html"
     },
     {
       id: 24, 
