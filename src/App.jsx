@@ -344,6 +344,17 @@ const WORKS_DATA = [
   { id: 27, title: "Virus", year: 2020, instrumentation: "Tenor & Ensemble", category: "Ensemble", duration: null, pdfUrl: null, audioUrl: null },
 ];
 
+const TEXTS_DATA = [
+  {
+    id: 1,
+    title: "Nähe und Distanz - Hans Thomallas „Nachtmusik“ beim ECLAT Festival 2026",
+    journal: "MusikTexteOnline",
+    date: "2026-02",
+    abstract: "ob zeitgenössische Musik, wenn sie ihre frühere Reibung verliert, auf eine solche Form ästhetischer Glätte zurückfallen muss",
+    url: "https://www.musiktexte.online/ausgaben/februar-2026/nahe-und-distanz"
+  },
+];
+
 // --- HELPER FUNCTION ---
 const findMatchingWork = (eventTitle) => {
   const normalizedEventTitle = eventTitle.toLowerCase().trim();
@@ -1001,6 +1012,35 @@ const WorksContent = () => {
   );
 };
 
+const TextsContent = () => (
+  <div className="space-y-8">
+    <div className="grid gap-6">
+      {TEXTS_DATA.map(text => (
+        <div key={text.id} className="p-6 border border-gray-100 hover:border-black transition-colors">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
+            <h4 className="font-medium text-gray-900 text-base leading-snug">{text.title}</h4>
+            <span className="text-xs text-gray-400 font-mono flex-shrink-0">{text.date}</span>
+          </div>
+          <p className="text-xs uppercase tracking-[0.2em] text-gray-400 mb-3">{text.journal}</p>
+          {text.abstract && (
+            <p className="text-sm text-gray-500 font-light leading-relaxed mb-4">{text.abstract}</p>
+          )}
+          {text.url && (
+            
+              href={text.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-xs uppercase tracking-wider underline text-gray-400 hover:text-black transition-colors"
+            >
+              Read →
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 const PhotosContent = () => {
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);
 
@@ -1176,6 +1216,7 @@ export default function App() {
             { id: 'bio', label: 'Biography' },
             { id: 'calendar', label: 'Calendar' },
             { id: 'works', label: 'Works' },
+            { id: 'texts', label: 'Texts' },
             { id: 'photos', label: 'Photos' },
             { id: 'contact', label: 'Contact' }
           ].map(nav => (
@@ -1214,6 +1255,11 @@ export default function App() {
           <WorksContent />
         </ModalWrapper>
       )}
+    {activeSection === 'texts' && (
+      <ModalWrapper title="Texts" onClose={() => setActiveSection(null)}>
+        <TextsContent />
+      </ModalWrapper>
+    )}
       {activeSection === 'photos' && (
         <ModalWrapper title="Concert Photos" onClose={() => setActiveSection(null)}>
           <PhotosContent />
