@@ -1015,19 +1015,19 @@ const WorksContent = () => {
 const TextsContent = () => (
   <div className="space-y-8">
     <div className="grid gap-6">
-      {TEXTS_DATA.map(text => (
-        <div key={text.id} className="p-6 border border-gray-100 hover:border-black transition-colors">
+      {TEXTS_DATA.map(item => (
+        <div key={item.id} className="p-6 border border-gray-100 hover:border-black transition-colors">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
-            <h4 className="font-medium text-gray-900 text-base leading-snug">{text.title}</h4>
-            <span className="text-xs text-gray-400 font-mono flex-shrink-0">{text.date}</span>
+            <h4 className="font-medium text-gray-900 text-base leading-snug">{item.title}</h4>
+            <span className="text-xs text-gray-400 font-mono flex-shrink-0">{item.date}</span>
           </div>
-          <p className="text-xs uppercase tracking-[0.2em] text-gray-400 mb-3">{text.journal}</p>
-          {text.abstract && (
-            <p className="text-sm text-gray-500 font-light leading-relaxed mb-4">{text.abstract}</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-gray-400 mb-3">{item.journal}</p>
+          {item.abstract && (
+            <p className="text-sm text-gray-500 font-light leading-relaxed mb-4">{item.abstract}</p>
           )}
-          {text.url && (
+          {item.url && (
             
-              href={text.url}
+              href={item.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block text-xs uppercase tracking-wider underline text-gray-400 hover:text-black transition-colors"
