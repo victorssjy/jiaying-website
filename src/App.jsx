@@ -1026,7 +1026,7 @@ const TextsContent = () => (
             <p className="text-sm text-gray-500 font-light leading-relaxed mb-4">{item.abstract}</p>
           )}
           {item.url && (
-            
+            <a
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
