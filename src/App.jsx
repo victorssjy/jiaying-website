@@ -60,6 +60,7 @@ const CV_DATA = {
       "Artist Scholarship \"Auf geht's\" 2022 – Ministry of Culture and Science of the State of North Rhine-Westphalia",
       "Artist Scholarship \"Auf geht's\" 2021 – Ministry of Culture and Science of the State of North Rhine-Westphalia",
       // Awards below
+      "Folkwang Preis (Komposition) 2026"
       "Rotary Composition Award 2025",
       "4th International Composer Competition New Music Generation 2022 – Horror Diploma Prize, Chamber Composition 2nd Division (21-27 years old)",
       "European Composer Competition Vienna/Austria – 3rd Category Chamber Music, 2nd Prize (2021)"
@@ -71,6 +72,7 @@ const CV_DATA = {
       "Künstlerstipendium \"Auf geht's\" 2022 – Ministerium für Kultur und Wissenschaft des Landes Nordrhein-Westfalen",
       "Künstlerstipendium \"Auf geht's\" 2021 – Ministerium für Kultur und Wissenschaft des Landes Nordrhein-Westfalen",
       // Auszeichnungen danach
+      "Folkwang Preis (Komposition) 2026"
       "Rotary Composition Award 2025",
       "4. Internationaler Kompositionswettbewerb New Music Generation 2022 – Horror Diploma Preis, Kammermusik 2. Kategorie (21-27 Jahre)",
       "European Composer Competition Wien/Österreich – 3. Kategorie Kammermusik, 2. Preis (2021)"
@@ -82,6 +84,7 @@ const CV_DATA = {
       "Bourse d'artiste \"Auf geht's\" 2022 – Ministère de la Culture et des Sciences du Land de Rhénanie-du-Nord-Westphalie",
       "Bourse d'artiste \"Auf geht's\" 2021 – Ministère de la Culture et des Sciences du Land de Rhénanie-du-Nord-Westphalie",
       // Prix ensuite
+      "Folkwang Preis (Komposition) 2026"
       "Rotary Composition Award 2025",
       "4e Concours international de composition New Music Generation 2022 – Prix Horror Diploma, Composition de chambre 2e division (21-27 ans)",
       "European Composer Competition Vienne/Autriche – 3e catégorie Musique de chambre, 2e Prix (2021)"
