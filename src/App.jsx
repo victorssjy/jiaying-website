@@ -55,38 +55,38 @@ const CV_DATA = {
   awardsAndScholarships: {
     en: [
       // Scholarships first
-      "Foundation Prix Monique Gabus Scholarship 2025 – France",
+        "Folkwang Preis (Komposition) 2026",
+      "Foundation Prix Monique Gabus Scholarship 2025/2026 – France",
+         "Rotary Composition Award 2025",
       "DAAD \"PROMOS\" Scholarship 2023 – Impuls 13th International Ensemble and Composer Academy for Contemporary Music",
       "Artist Scholarship \"Auf geht's\" 2022 – Ministry of Culture and Science of the State of North Rhine-Westphalia",
+        "4th International Composer Competition New Music Generation 2022 – Horror Diploma Prize, Chamber Composition 2nd Division (21-27 years old)",
       "Artist Scholarship \"Auf geht's\" 2021 – Ministry of Culture and Science of the State of North Rhine-Westphalia",
       // Awards below
-      "Folkwang Preis (Komposition) 2026",
-      "Rotary Composition Award 2025",
-      "4th International Composer Competition New Music Generation 2022 – Horror Diploma Prize, Chamber Composition 2nd Division (21-27 years old)",
       "European Composer Competition Vienna/Austria – 3rd Category Chamber Music, 2nd Prize (2021)"
     ],
     de: [
       // Stipendien zuerst
-      "Fondation Prix Monique Gabus Stipendium 2025 – Frankreich",
+        "Folkwang Preis (Komposition) 2026",
+      "Fondation Prix Monique Gabus Stipendium 2025/2026 – Frankreich",
+        "Rotary Composition Award 2025",
       "DAAD \"PROMOS\" Stipendium 2023 – Impuls 13. Internationale Ensemble- und Komponistenakademie für zeitgenössische Musik",
       "Künstlerstipendium \"Auf geht's\" 2022 – Ministerium für Kultur und Wissenschaft des Landes Nordrhein-Westfalen",
+         "4. Internationaler Kompositionswettbewerb New Music Generation 2022 – Horror Diploma Preis, Kammermusik 2. Kategorie (21-27 Jahre)",
       "Künstlerstipendium \"Auf geht's\" 2021 – Ministerium für Kultur und Wissenschaft des Landes Nordrhein-Westfalen",
       // Auszeichnungen danach
-      "Folkwang Preis (Komposition) 2026",
-      "Rotary Composition Award 2025",
-      "4. Internationaler Kompositionswettbewerb New Music Generation 2022 – Horror Diploma Preis, Kammermusik 2. Kategorie (21-27 Jahre)",
       "European Composer Competition Wien/Österreich – 3. Kategorie Kammermusik, 2. Preis (2021)"
     ],
     fr: [
       // Bourses d'abord
-      "Bourse de la Fondation Prix Monique Gabus 2025 – France",
+        "Folkwang Preis (Komposition) 2026",
+      "Bourse de la Fondation Prix Monique Gabus 2025/2026 – France",
+        "Rotary Composition Award 2025",
       "Bourse DAAD \"PROMOS\" 2023 – Impuls 13e Académie internationale d'ensemble et de composition pour la musique contemporaine",
       "Bourse d'artiste \"Auf geht's\" 2022 – Ministère de la Culture et des Sciences du Land de Rhénanie-du-Nord-Westphalie",
+        "4e Concours international de composition New Music Generation 2022 – Prix Horror Diploma, Composition de chambre 2e division (21-27 ans)",
       "Bourse d'artiste \"Auf geht's\" 2021 – Ministère de la Culture et des Sciences du Land de Rhénanie-du-Nord-Westphalie",
       // Prix ensuite
-      "Folkwang Preis (Komposition) 2026",
-      "Rotary Composition Award 2025",
-      "4e Concours international de composition New Music Generation 2022 – Prix Horror Diploma, Composition de chambre 2e division (21-27 ans)",
       "European Composer Competition Vienne/Autriche – 3e catégorie Musique de chambre, 2e Prix (2021)"
     ]
   },
