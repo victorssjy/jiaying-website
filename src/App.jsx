@@ -133,6 +133,18 @@ const CV_DATA = {
 // --- CALENDAR DATA ---
 const EVENTS_DATA = {
   upcoming: [
+      {
+      id: 29, 
+      date: "2026-06-06", 
+      time: "13:00",
+      city: "Bulgaria", 
+      venue: "Sofia Music Weeks Festival", 
+      address: "",
+      title: "Cette porte ne s'ouvre pas", 
+      ensemble: "catinblack ensemble", 
+      description: "",
+      url: ""
+    },
        {
       id: 27, 
       date: "2026-06-14", 
@@ -142,6 +154,18 @@ const EVENTS_DATA = {
       address: "Kyllstraße 7a, 50678 Köln",
       title: "Cette porte ne s'ouvre pas", 
       ensemble: "catinblack ensemble", 
+      description: "",
+      url: ""
+    },
+      {
+      id: 30, 
+      date: "2026-07-12", 
+      time: "17:00",
+      city: "Essen-Werden, Germany", 
+      venue: "Folkwang Preis Gala 2026", 
+      address: "Klemensborn 39, 45239 Essen",
+      title: "*New Work", 
+      ensemble: "han_motyka.duo", 
       description: "",
       url: ""
     },
