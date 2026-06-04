@@ -348,14 +348,6 @@ const WORKS_DATA = [
 ];
 
 const TEXTS_DATA = [
-  {
-    id: 1,
-    title: "Nähe und Distanz - Hans Thomallas „Nachtmusik“ beim ECLAT Festival 2026",
-    journal: "MusikTexteOnline",
-    date: "2026-02",
-    abstract: "ob zeitgenössische Musik, wenn sie ihre frühere Reibung verliert, auf eine solche Form ästhetischer Glätte zurückfallen muss",
-    url: "https://www.musiktexte.online/ausgaben/februar-2026/nahe-und-distanz"
-  },
     {
     id: 2,
     title: "Kein Entkommen aus der Gegenwart",
@@ -363,6 +355,14 @@ const TEXTS_DATA = [
     date: "2026-05",
     abstract: "Jiaying He berichtet von Höhepunkten eines Festivals, das unaufgeregt, aber tiefgreifend politische Musik präsentierte und sich als Radiofestival wiederentdeckt hat.",
     url: "https://www.musiktexte.online/ausgaben/mai-2026/rubrik:Bericht"
+  },
+  {
+    id: 1,
+    title: "Nähe und Distanz - Hans Thomallas „Nachtmusik“ beim ECLAT Festival 2026",
+    journal: "MusikTexteOnline",
+    date: "2026-02",
+    abstract: "ob zeitgenössische Musik, wenn sie ihre frühere Reibung verliert, auf eine solche Form ästhetischer Glätte zurückfallen muss",
+    url: "https://www.musiktexte.online/ausgaben/februar-2026/nahe-und-distanz"
   },
 ];
 
