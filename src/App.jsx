@@ -173,18 +173,6 @@ const EVENTS_DATA = {
       url: ""
     },
       {
-      id: 28, 
-      date: "2026-09-12", 
-      time: "13:00",
-      city: "Köln, Germany", 
-      venue: "Sankt Peter Kirche", 
-      address: "Jabachstraße 1, 50676 Köln",
-      title: "*New Work", 
-      ensemble: "TRIO vis-à-vis", 
-      description: "Program: Lunchkonzert in der Sankt Peter Kirche",
-      url: ""
-    },
-      {
       id: 25, 
       date: "2026-10-01", 
       time: "",
@@ -218,6 +206,18 @@ const EVENTS_DATA = {
       title: "*New Work", 
       ensemble: "Violin & Piano", 
       description: "",
+      url: ""
+    },
+      {
+      id: 28, 
+      date: "Autumn2027", 
+      time: "TBD",
+      city: "Berlin, Germany", 
+      venue: "BKA Theater", 
+      address: "Mehringdamm 34, 10961 Berlin-Bezirk Friedrichshain-Kreuzberg",
+      title: "*New Work", 
+      ensemble: "TRIO vis-à-vis", 
+      description: "Program: Lunchkonzert in der Sankt Peter Kirche",
       url: ""
     },
   ],
@@ -355,6 +355,14 @@ const TEXTS_DATA = [
     date: "2026-02",
     abstract: "ob zeitgenössische Musik, wenn sie ihre frühere Reibung verliert, auf eine solche Form ästhetischer Glätte zurückfallen muss",
     url: "https://www.musiktexte.online/ausgaben/februar-2026/nahe-und-distanz"
+  },
+    {
+    id: 2,
+    title: "Kein Entkommen aus der Gegenwart",
+    journal: "MusikTexteOnline",
+    date: "2026-05",
+    abstract: "Jiaying He berichtet von Höhepunkten eines Festivals, das unaufgeregt, aber tiefgreifend politische Musik präsentierte und sich als Radiofestival wiederentdeckt hat.",
+    url: "https://www.musiktexte.online/ausgaben/mai-2026/rubrik:Bericht"
   },
 ];
 
