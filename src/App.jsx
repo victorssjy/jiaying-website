@@ -210,14 +210,14 @@ const EVENTS_DATA = {
     },
       {
       id: 28, 
-      date: "Autumn2027", 
+      date: "2027 Autumn", 
       time: "TBD",
       city: "Berlin, Germany", 
       venue: "BKA Theater", 
       address: "Mehringdamm 34, 10961 Berlin-Bezirk Friedrichshain-Kreuzberg",
       title: "*New Work", 
       ensemble: "TRIO vis-à-vis", 
-      description: "Program: Lunchkonzert in der Sankt Peter Kirche",
+      description: "",
       url: ""
     },
   ],
