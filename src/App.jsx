@@ -227,7 +227,7 @@ const EVENTS_DATA = {
       city: "Berlin, Germany", 
       venue: "Unerhörte Musik, BKA Theater", 
       address: "Mehringdamm 34, 10961 Berlin-Bezirk Friedrichshain-Kreuzberg",
-      title: "*New Work", 
+      title: "*New Work (commission)", 
       ensemble: "TRIO vis-à-vis", 
       description: "",
       url: ""
