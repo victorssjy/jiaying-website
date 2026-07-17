@@ -137,49 +137,13 @@ const CV_DATA = {
 const EVENTS_DATA = {
   upcoming: [
       {
-      id: 29, 
-      date: "2026-06-06", 
-      time: "13:00",
-      city: "Bulgaria", 
-      venue: "Sofia Music Weeks Festival", 
-      address: "",
-      title: "Cette porte ne s'ouvre pas", 
-      ensemble: "catinblack ensemble", 
-      description: "",
-      url: ""
-    },
-       {
-      id: 27, 
-      date: "2026-06-14", 
-      time: "11:30",
-      city: "Köln, Germany", 
-      venue: "o-ton Saal 50678 Köln", 
-      address: "Kyllstraße 7a, 50678 Köln",
-      title: "Cette porte ne s'ouvre pas", 
-      ensemble: "catinblack ensemble", 
-      description: "",
-      url: ""
-    },
-      {
-      id: 30, 
-      date: "2026-07-12", 
-      time: "17:00",
-      city: "Essen-Werden, Germany", 
-      venue: "Folkwang Preis Gala 2026", 
-      address: "Klemensborn 39, 45239 Essen",
-      title: "*New Work", 
-      ensemble: "han_motyka.duo", 
-      description: "",
-      url: ""
-    },
-      {
       id: 25, 
       date: "2026-10-01", 
-      time: "",
+      time: "19:30",
       city: "Paris, France", 
       venue: "TBD", 
-      address: "",
-      title: "*New Work", 
+      address: "Maison de la Radio et de la Musique - Studio 104",
+      title: "toujours, toujours, même maintenant", 
       ensemble: "Orchestre Philharmonique de Radio France", 
       description: "Orchestration：3333/4331/3 perc 1 timp/Harp/1210844",
       url: "https://france-orchestres.com/concours-de-composition-deuxieme-edition/"
@@ -208,6 +172,54 @@ const EVENTS_DATA = {
       description: "",
       url: ""
     },
+     {
+      id: 31, 
+      date: "2026-11-11", 
+      time: "TBD",
+      city: "Essen, Germany", 
+      venue: "", 
+      address: "",
+      title: "*New Work (commission)", 
+      ensemble: "Peripherie Quartett", 
+      description: "",
+      url: ""
+    },
+    {
+      id: 32, 
+      date: "2027-01-29", 
+      time: "TBD",
+      city: "Paris, France", 
+      venue: "CNSMDP", 
+      address: "209 avenue Jean Jaurès,75019 Paris",
+      title: "*New Work", 
+      ensemble: "Ensemble Intercontemporain & Ensemble NEXT", 
+      description: "",
+      url: ""
+    },
+     {
+      id: 33, 
+      date: "2027-03-06", 
+      time: "TBD",
+      city: "Köln, Germany", 
+      venue: "o-ton Saal", 
+      address: "kyllstraße 7a, 50678 Köln",
+      title: "*New Work (commission)", 
+      ensemble: "Trio S!GNALE", 
+      description: "",
+      url: ""
+    },
+    {
+      id: 34, 
+      date: "2027-03-12", 
+      time: "TBD",
+      city: "Paris, France", 
+      venue: "CNSMDP", 
+      address: "209 avenue Jean Jaurès,75019 Paris",
+      title: "*New Work", 
+      ensemble: "", 
+      description: "",
+      url: ""
+    },
       {
       id: 28, 
       date: "2027 Autumn", 
@@ -221,7 +233,43 @@ const EVENTS_DATA = {
       url: ""
     },
   ],
-  archive: [    
+  archive: [ 
+      {
+      id: 30, 
+      date: "2026-07-12", 
+      time: "17:00",
+      city: "Essen-Werden, Germany", 
+      venue: "Folkwang Preis Gala 2026", 
+      address: "Klemensborn 39, 45239 Essen",
+      title: "und die Brunnen verschlafen rauschen in der prächtigen Sommernacht", 
+      ensemble: "Yilin Han", 
+      description: "",
+      url: ""
+    },
+    {
+      id: 27, 
+      date: "2026-06-14", 
+      time: "11:30",
+      city: "Köln, Germany", 
+      venue: "o-ton Saal 50678 Köln", 
+      address: "Kyllstraße 7a, 50678 Köln",
+      title: "Cette porte ne s'ouvre pas", 
+      ensemble: "catinblack ensemble", 
+      description: "",
+      url: ""
+    },
+      {
+      id: 29, 
+      date: "2026-06-06", 
+      time: "13:00",
+      city: "Bulgaria", 
+      venue: "Sofia Music Weeks Festival", 
+      address: "",
+      title: "Cette porte ne s'ouvre pas", 
+      ensemble: "catinblack ensemble", 
+      description: "",
+      url: ""
+    },
     { 
       id: 1, 
       date: "2026-03-27", 
@@ -286,8 +334,8 @@ const EVENTS_DATA = {
       url: "https://www.theater-essen.de/programm/a-z/percussion-pur-149545/"
     },
     { id: 8, date: "2025-Jul-04", time: "18:00", city: "Essen, Germany", venue: "Folkwang uni", title: "I am acc...", ensemble: "Muzi Lyu, Ying Yu", description: "Neue aula Essen" },
-    { id: 25, date: "2025-Jul-04", time: "18:00", city: "Essen, Germany", venue: "Folkwang uni", title: "Peekaboo", ensemble: "BenMo Trio, Muzi Lyu, Ying Yu", description: "Neue aula Essen" },
-    { id: 26, date: "2025-Jul-04", time: "18:00", city: "Essen, Germany", venue: "Folkwang uni", title: "Hallo World!", ensemble: "Muzi Lyu, Ying Yu", description: "Neue aula Essen" },
+    { id: 25, date: "2025-Jul-04", time: "18:00", city: "Essen, Germany", venue: "Folkwang uni", title: "Peekaboo", ensemble: "BenMo Trio", description: "Neue aula Essen" },
+    { id: 26, date: "2025-Jul-04", time: "18:00", city: "Essen, Germany", venue: "Folkwang uni", title: "Hallo World!", ensemble: "", description: "Neue aula Essen" },
     { id: 24, date: "2025-Jun", city: "Hamburg, Germany", venue: "blurred edges Festival für aktuelle Musik Hamburg 2025", title: "I am addicted", ensemble: "Violin: Anja Gaettens, Piano: Jannifer Hymer", description: "Second performance" },
     { id: 9, date: "2025-Apr", city: "Essen, Germany", venue: "Mini Resident GNMR", title: "Endless labyrinths (Kafka - das Schloss)", ensemble: "Dance, Electronics, Viola", description: "Funded by Gesellschaft für Neue Musik Ruhr e.V. (GNMR)" },
     { 
