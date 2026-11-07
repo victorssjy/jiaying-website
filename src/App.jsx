@@ -136,30 +136,6 @@ const CV_DATA = {
 // --- CALENDAR DATA ---
 const EVENTS_DATA = {
   upcoming: [
-      {
-      id: 25, 
-      date: "2026-10-01", 
-      time: "19:30",
-      city: "Paris, France", 
-      venue: "TBD", 
-      address: "Maison de la Radio et de la Musique - Studio 104",
-      title: "toujours, toujours, même maintenant", 
-      ensemble: "Orchestre Philharmonique de Radio France", 
-      description: "Orchestration：3333/4331/3 perc 1 timp/Harp/1210844",
-      url: "https://france-orchestres.com/concours-de-composition-deuxieme-edition/"
-    },
-      {
-      id: 26, 
-      date: "2026-11-06", 
-      time: "",
-      city: "Essen, Germany", 
-      venue: "Essen Phiharmonie", 
-      address: "Huyssenallee 53, 45128 Essen",
-      title: "vacuum travel: 55 days", 
-      ensemble: "WDR Sinfonieorchester", 
-      description: "Program: NOW！Festival 2026. Orchestration: 2222/4231/2perc.1pauken/Klavier/108643",
-      url: "https://www1.wdr.de/orchester-und-chor/sinfonieorchester/konzerte/termine/mdz-leicht-bewoelkt-100.html"
-    },
     {
       id: 24, 
       date: "2026-11-07", 
@@ -234,6 +210,30 @@ const EVENTS_DATA = {
     },
   ],
   archive: [ 
+       {
+      id: 26, 
+      date: "2026-11-06", 
+      time: "",
+      city: "Essen, Germany", 
+      venue: "Essen Phiharmonie", 
+      address: "Huyssenallee 53, 45128 Essen",
+      title: "vacuum travel: 55 days", 
+      ensemble: "WDR Sinfonieorchester", 
+      description: "Program: NOW！Festival 2026. Orchestration: 2222/4231/2perc.1pauken/Klavier/108643",
+      url: "https://www1.wdr.de/orchester-und-chor/sinfonieorchester/konzerte/termine/mdz-leicht-bewoelkt-100.html"
+    },
+       {
+      id: 25, 
+      date: "2026-10-01", 
+      time: "19:30",
+      city: "Paris, France", 
+      venue: "TBD", 
+      address: "Maison de la Radio et de la Musique - Studio 104",
+      title: "toujours, toujours, même maintenant", 
+      ensemble: "Orchestre Philharmonique de Radio France", 
+      description: "Orchestration：3333/4331/3 perc 1 timp/Harp/1210844",
+      url: "https://france-orchestres.com/concours-de-composition-deuxieme-edition/"
+    },
       {
       id: 30, 
       date: "2026-07-12", 
